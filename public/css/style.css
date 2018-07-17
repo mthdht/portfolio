@@ -65,9 +65,22 @@ a {
 }
 
 
-/* ========== NAVIGATION ========== */
+/* ========== HEADER ========== */
+.jumbotron {
+    height: calc(100vh - 80px);
+    background: url("/img/wallpaper-small.png") no-repeat center;
+    background-size: cover;
+}
 
 
+/* ========== END HEADER ========== */
 
-/* ========== END NAVIGATION ========== */
+/*========================================================
+                  MEDIA QUERIES
+  ======================================================== */
 
+@media (min-width: 768px) {
+    .jumbotron {
+        background-image: url("/img/wallpaper.png");
+    }
+}

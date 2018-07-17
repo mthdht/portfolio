@@ -51,9 +51,14 @@
                     <a href="#" class="w3-bar-item w3-button">A propos</a>
                 </div>
             </nav>
+            @yield('jumbotron')
         </header>
 
         <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+        <main class="w3-content">
+            @yield('content')
+        </main>
 
     </div>
 
