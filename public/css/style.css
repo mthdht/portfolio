@@ -1,7 +1,73 @@
+/**
+ * Style for portfolio website
+ * AUTHOR: mthdht
+ */
+
+/* FONT */
 .coda {
     font-family: 'Coda Caption', sans-serif;
 }
 
+
+/* ========== COLORS ============ */
+
+/* theme: Color-theme */
+.ct-dark-blue, .ct-hover-dark-blue:hover {
+    background-color: #133046;
+    color: #FFF;
+}
+
+.ct-text-dark-blue, .ct-hover-text-dark-blue:hover {
+    color: #133046;
+}
+
+.ct-blue, .ct-hover-blue:hover {
+    background-color: #15959F;
+    color: #FFF;
+}
+
+.ct-text-blue, .ct-hover-text-blue:hover {
+    color: #15959F;
+}
+
+.ct-camel-light {
+    background-color: #F1E4B3;
+}
+
+.ct-text-camel-light {
+    color: #F1E4B3;
+}
+
+.ct-pink {
+    background-color: #EC9770;
+    color: #FFFFFF;
+}
+
+.ct-text-pink {
+    color: #EC9770;
+}
+
+.ct-red {
+    background-color: #C7402D;
+    color: #FFFFFF;
+}
+
+.ct-text-red {
+    color: #C7402D;
+}
+
+/* theme: Cpop1 */
+
+/* theme: Sunset-Sky */
+
 a {
     text-decoration: none;
 }
+
+
+/* ========== NAVIGATION ========== */
+
+
+
+/* ========== END NAVIGATION ========== */
+

@@ -25,21 +25,48 @@
 <body>
     <div id="app">
         <header>
-            <nav class="w3-bar w3-red">
-                <div class="w3-content">
-                    <a href="" class="w3-bar-item w3-large coda">
-                        <img src="{{ asset('img/md-white.png') }}" alt="logo MD" width="50" class="w3-image">
-                       <b>Matthieu Dehondt</b>
+            <nav class="w3-bar ct-dark-blue">
+                <div class="w3-content w3-center">
+                    <a class="w3-bar-item w3-left w3-hide-large w3-hide-medium ct-hover-blue" onclick="w3_open()">
+                        <img src="{{ asset('img/md-white.png') }}" alt="logo MD" width="43" class="w3-image" >
                     </a>
-                    <div class="w3-right w3-padding">
-                        <a href="" class="w3-bar-item w3-button w3-large">{{ __('Projets') }}</a>
-                        <a href="" class="w3-bar-item w3-button w3-large">{{ __('Games') }}</a>
-                        <a href="" class="w3-bar-item w3-button w3-large">{{ __('Cours') }}</a>
-                        <a href="" class="w3-bar-item w3-button w3-large">{{ __('Contact') }}</a>
+
+                    <a href="" class="w3-bar-item w3-large coda w3-padding-16 ct-hover-blue">
+                        <img src="{{ asset('img/md-white.png') }}" alt="logo MD" width="50" class="w3-image w3-hide-small" >
+                        <b>Matthieu Dehondt</b>
+                    </a>
+
+                    <div class="w3-right w3-padding-16 w3-hide-small">
+                        <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Projets</b></a>
+                        <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Games</b></a>
+                        <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Cours</b></a>
+                        <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Contact</b></a>
                     </div>
+                </div>
+
+                <div class="w3-sidebar w3-bar-block w3-border-right w3-text-dark-gray" style="display:none;z-index: 10" id="mySidebar">
+                    <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+                    <a href="#" class="w3-bar-item w3-button w3-text-teal">Acceuil</a>
+                    <a href="#" class="w3-bar-item w3-button">Chapitres</a>
+                    <a href="#" class="w3-bar-item w3-button">A propos</a>
                 </div>
             </nav>
         </header>
+
+        <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
     </div>
+
+    <script>
+        function w3_open(elem) {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+        function w3_close() {
+            console.log('close');
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+    </script>
 </body>
 </html>
