@@ -13,23 +13,25 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800" rel="stylesheet">
+
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <header>
-            <nav class="w3-bar w3-red w3-padding">
+            <nav class="w3-bar w3-red">
                 <div class="w3-content">
-                    <a href="" class="">
-                        <img src="/img/logomthwhite.png" alt="logo matthieu dehondt" width="180">
+                    <a href="" class="w3-bar-item w3-large coda">
+                        <img src="{{ asset('img/md-white.png') }}" alt="logo MD" width="50" class="w3-image">
+                       <b>Matthieu Dehondt</b>
                     </a>
-                    <div class="w3-right">
+                    <div class="w3-right w3-padding">
                         <a href="" class="w3-bar-item w3-button w3-large">{{ __('Projets') }}</a>
                         <a href="" class="w3-bar-item w3-button w3-large">{{ __('Games') }}</a>
                         <a href="" class="w3-bar-item w3-button w3-large">{{ __('Cours') }}</a>
