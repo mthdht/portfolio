@@ -9,11 +9,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
@@ -22,45 +17,42 @@
     <!-- Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
-<body>
-    <div id="app">
-        <header>
-            <nav class="w3-bar ct-dark-blue">
-                <div class="w3-content w3-center">
-                    <a class="w3-bar-item w3-left w3-hide-large w3-hide-medium ct-hover-blue" onclick="w3_open()">
-                        <img src="{{ asset('img/md-white.png') }}" alt="logo MD" width="43" class="w3-image" >
-                    </a>
+<body class="w3-text-dark-gray">
+    <header>
+        <nav class="w3-bar ct-dark-blue">
+            <div class="w3-content w3-center">
+                <a class="w3-bar-item w3-left w3-hide-large w3-hide-medium ct-hover-blue" onclick="w3_open()">
+                    <img src="{{ asset('img/md-white.png') }}" alt="logo MD" width="43" class="w3-image" >
+                </a>
 
-                    <a href="" class="w3-bar-item w3-large coda w3-padding-16 ct-hover-blue">
-                        <img src="{{ asset('img/md-white.png') }}" alt="logo MD" width="50" class="w3-image w3-hide-small" >
-                        <b>Matthieu Dehondt</b>
-                    </a>
+                <a href="" class="w3-bar-item w3-large coda w3-padding-16 ct-hover-blue">
+                    <img src="{{ asset('img/md-white.png') }}" alt="logo MD" width="50" class="w3-image w3-hide-small" >
+                    <b>Matthieu Dehondt</b>
+                </a>
 
-                    <div class="w3-right w3-padding-16 w3-hide-small">
-                        <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Projets</b></a>
-                        <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Games</b></a>
-                        <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Cours</b></a>
-                        <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Contact</b></a>
-                    </div>
+                <div class="w3-right w3-padding-16 w3-hide-small">
+                    <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Projets</b></a>
+                    <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Games</b></a>
+                    <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Cours</b></a>
+                    <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Contact</b></a>
                 </div>
+            </div>
 
-                <div class="w3-sidebar w3-bar-block w3-border-right w3-text-dark-gray" style="display:none;z-index: 10" id="mySidebar">
-                    <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
-                    <a href="#" class="w3-bar-item w3-button w3-text-teal">Acceuil</a>
-                    <a href="#" class="w3-bar-item w3-button">Chapitres</a>
-                    <a href="#" class="w3-bar-item w3-button">A propos</a>
-                </div>
-            </nav>
-            @yield('jumbotron')
-        </header>
+            <div class="w3-sidebar w3-bar-block w3-border-right w3-text-dark-gray" style="display:none;z-index: 10" id="mySidebar">
+                <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+                <a href="#" class="w3-bar-item w3-button w3-text-teal">Acceuil</a>
+                <a href="#" class="w3-bar-item w3-button">Chapitres</a>
+                <a href="#" class="w3-bar-item w3-button">A propos</a>
+            </div>
+        </nav>
+        @yield('jumbotron')
+    </header>
 
-        <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+    <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
-        <main class="w3-content">
-            @yield('content')
-        </main>
-
-    </div>
+    <main class="w3-content">
+        @yield('content')
+    </main>
 
     <script>
         function w3_open(elem) {
