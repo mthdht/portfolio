@@ -2,14 +2,14 @@
 
 @section('jumbotron')
     <div class="jumbotron ct-camel-light">
-        <div class="w3-content w3-padding-16 w3-center">
+        <div class="w3-content w3-padding-16 w3-padding w3-center">
             <div class="w3-col m5 l4">
                 <img src="/img/moi.jpg" alt="photo de matthieu dehondt" class="w3-circle w3-image">
                 <h1>Matthieu Dehondt</h1>
                 <p>Développeur | Formateur</p>
             </div>
 
-            <div class="w3-col m7 l8">
+            <div class="w3-col m7 l8 w3-hide-small">
                 <h2>Bienvenue sur mon site !</h2>
             </div>
         </div>
@@ -18,7 +18,7 @@
 
 @section('content')
     <div class="services w3-row">
-        <div class="w3-col m6 l4 ct-dark-blue w3-hover-blue-gray">
+        <div class="w3-col m6 l4 ct-dark-blue w3-hover-opacity">
             <a href="projets">
                 <div class="w3-center w3-padding-large w3-padding-32">
                     <i class="fas fa-archive fa-4x"></i>
@@ -28,7 +28,7 @@
             </a>
         </div>
 
-        <div class="w3-col m6 l4 ct-blue w3-hover-blue">
+        <div class="w3-col m6 l4 ct-blue w3-hover-opacity">
             <a href="">
                 <div class="w3-center w3-padding-large w3-padding-32">
                     <i class="fas fa-gamepad fa-4x"></i>
@@ -38,7 +38,7 @@
             </a>
         </div>
 
-        <div class="w3-col m6 l4 ct-red ct-hover-pink">
+        <div class="w3-col m6 l4 ct-red w3-hover-opacity">
             <a href="">
                 <div class="w3-center w3-padding-large w3-padding-32">
                     <i class="fas fa-book fa-4x"></i>

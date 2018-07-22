@@ -38,8 +38,8 @@
                 </div>
             </div>
 
-            <div class="w3-sidebar w3-bar-block w3-border-right w3-text-dark-gray" style="display:none;z-index: 10" id="mySidebar">
-                <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+            <div class="w3-sidebar w3-bar-block w3-border-right w3-text-white ct-dark-blue" style="display:none;z-index: 10" id="mySidebar">
+                <button onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-text-white">Close &times;</button>
                 <a href="#" class="w3-bar-item w3-button w3-text-teal">Acceuil</a>
                 <a href="#" class="w3-bar-item w3-button">Chapitres</a>
                 <a href="#" class="w3-bar-item w3-button">A propos</a>
