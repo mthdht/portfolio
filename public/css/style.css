@@ -38,21 +38,21 @@
     color: #F1E4B3;
 }
 
-.ct-pink {
+.ct-pink, .ct-hover-pink:hover {
     background-color: #EC9770;
     color: #FFFFFF;
 }
 
-.ct-text-pink {
+.ct-text-pink, .ct-hover-text-pink {
     color: #EC9770;
 }
 
-.ct-red {
+.ct-red, .ct-hover-red {
     background-color: #C7402D;
     color: #FFFFFF;
 }
 
-.ct-text-red {
+.ct-text-red, .ct-hover-text-red {
     color: #C7402D;
 }
 
@@ -64,10 +64,17 @@ a {
     text-decoration: none;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
 
 /* ========== HEADER ========== */
 
 .jumbotron {
+    /*
+    margin-top: 80px;
+    */
     overflow: hidden;
 }
 /* ========== END HEADER ========== */

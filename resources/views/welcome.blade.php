@@ -17,6 +17,36 @@
 @endsection
 
 @section('content')
+    <div class="services w3-row">
+        <div class="w3-col m6 l4 ct-dark-blue w3-hover-blue-gray">
+            <a href="projets">
+                <div class="w3-center w3-padding-large w3-padding-32">
+                    <i class="fas fa-archive fa-4x"></i>
+                    <h3>Mes projets</h3>
+                    <p>Découvrir mes différents projets personnel et mes travaux en cour!</p>
+                </div>
+            </a>
+        </div>
 
+        <div class="w3-col m6 l4 ct-blue w3-hover-blue">
+            <a href="">
+                <div class="w3-center w3-padding-large w3-padding-32">
+                    <i class="fas fa-gamepad fa-4x"></i>
+                    <h3>Mes jeu</h3>
+                    <p>Jouer à des reproduction de jeu tel que le Mastermind, Jeu des Paires, Tic Tac Toe ...!</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="w3-col m6 l4 ct-red ct-hover-pink">
+            <a href="">
+                <div class="w3-center w3-padding-large w3-padding-32">
+                    <i class="fas fa-book fa-4x"></i>
+                    <h3>Mes cours</h3>
+                    <p>Apprendre à le développement web avec différents cours sur HTML, CSS, Javascript et PHP !</p>
+                </div>
+            </a>
+        </div>
+    </div>
 @endsection
 

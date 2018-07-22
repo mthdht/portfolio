@@ -50,7 +50,7 @@
 
     <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
-    <main class="w3-content">
+    <main class="w3-main">
         @yield('content')
     </main>
 
