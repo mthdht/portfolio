@@ -68,6 +68,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
+.w3-animate-left{position:relative;animation:animateleft 1.5s}
+.w3-animate-right{position:relative;animation:animateright 1.5s}
+.w3-animate-bottom{position:relative;animation:animatebottom 1.5s}
+
+
 
 /* ========== HEADER ========== */
 
