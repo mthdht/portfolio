@@ -3,15 +3,15 @@
 @section('jumbotron')
     <div class="jumbotron ct-camel-light">
         <div class="w3-row w3-center">
-            <div class="w3-col m6 l6">
+            <div class="w3-col m6 l6 me">
                 <img src="/img/moi.jpg" alt="photo de matthieu dehondt" class="w3-circle w3-image w3-padding-large" width="300px">
-                <div class="w3-animate-left">
+                <div class="">
                     <h1>Matthieu Dehondt</h1>
                     <p class="w3-large">Développeur | Formateur</p>
                 </div>
             </div>
 
-            <div class="w3-col m6 l6 w3-hide-small w3-left-align w3-padding-32 w3-animate-right">
+            <div class="w3-col m6 l6 w3-hide-small w3-left-align w3-padding-32 presentation">
                 <h2 class="w3-small"><b>BIENVENUE SUR MON SITE !</b></h2>
             </div>
         </div>
@@ -54,7 +54,7 @@
     <section class="skills w3-row w3-padding w3-padding-48 w3-center">
         <h2 class="w3-xxlarge">Compétences</h2>
         <div class="w3-row">
-            <div class="w3-col l6 w3-padding-24">
+            <div class="w3-col l6 w3-padding-24 languages">
                 <h3>Langages</h3>
                 <div class="skillbar w3-dark-gray w3-margin-top">
                     <div class="html w3-padding-large w3-red" style="width: 90%">
@@ -123,7 +123,7 @@
                 </div>
             </div>
 
-            <div class="w3-col l6 w3-padding-24 w3-row-padding">
+            <div class="w3-col l6 w3-padding-24 w3-row-padding tools">
                 <h3>Outils</h3>
 
                 <div class="tool w3-col s4 w3-center">

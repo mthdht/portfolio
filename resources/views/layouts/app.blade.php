@@ -65,5 +65,13 @@
             document.getElementById("myOverlay").style.display = "none";
         }
     </script>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script>
+        window.sr = ScrollReveal({ duration: 1000, delay: 300 });
+        sr.reveal('.me', { origin: 'left' });
+        sr.reveal('.presentation', { origin: 'right' });
+        sr.reveal('.languages', { origin: 'left' });
+        sr.reveal('.tools', { origin: 'right' });
+    </script>
 </body>
 </html>
