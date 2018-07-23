@@ -53,6 +53,7 @@
         <h2>Mes compétences</h2>
         <div class="w3-row">
             <div class="w3-col l6">
+                <h3>Langages</h3>
                 <div class="skillbar w3-dark-gray w3-margin-top">
                     <div class="html w3-padding-large w3-red" style="width: 90%">
                         <div class="skill-title w3-left">
@@ -119,12 +120,47 @@
                     </div>
                 </div>
             </div>
+
+            <div class="w3-col l6 w3-padding-24">
+                <h3>Outils</h3>
+
+                <div class="tool w3-col s6 m4 w3-center">
+                    <img src="/img/git.png" alt="logo de git" class="w3-image">
+                    <p>Git</p>
+                </div>
+
+                <div class="tool w3-col s6 m4 w3-center">
+                    <img src="/img/github.png" alt="logo github" class="w3-image">
+                    <p>Github</p>
+                </div>
+
+                <div class="tool w3-col s6 m4 w3-center">
+                    <img src="/img/react.png" alt="logo react" class="w3-image">
+                    <p>React</p>
+                </div>
+
+                <div class="tool w3-col s6 m4 w3-center">
+                    <img src="/img/vue.png" alt="logo vuejs" class="w3-image">
+                    <p>Vue</p>
+                </div>
+
+                <div class="tool w3-col s6 m4 w3-center">
+                    <img src="/img/laravel.png" alt="logo laravel" class="w3-image">
+                    <p>Laravel</p>
+                </div>
+
+                <div class="tool w3-col s6 m4 w3-center">
+                    <img src="/img/phpstorm.png" alt="logo phpstorm" class="w3-image">
+                    <p>PhpStorm</p>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <section class="w3-padding w3-padding-48 w3-center">
+    <section class="w3-padding w3-padding-48 w3-center ct-red">
         <h2>Portfolio</h2>
-        <p>Mes projets récents</p>
+        <p class="w3-large">Mes projets récents</p>
     </section>
 @endsection
 
