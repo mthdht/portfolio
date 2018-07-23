@@ -70,8 +70,8 @@
         window.sr = ScrollReveal({ duration: 1000, delay: 300 });
         sr.reveal('.me', { origin: 'left' });
         sr.reveal('.presentation', { origin: 'right' });
-        sr.reveal('.languages', { origin: 'left' });
-        sr.reveal('.tools', { origin: 'right' });
+        sr.reveal('.skillbar', { origin: 'bottom' }, 100);
+        sr.reveal('.tool', { origin: 'right' }, 100 );
     </script>
 </body>
 </html>

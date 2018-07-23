@@ -160,17 +160,166 @@
         </div>
     </section>
 
-    <section class="w3-padding w3-padding-48 w3-center ct-red">
+    <section class="w3-padding-48 w3-center ct-dark-blue">
         <h2 class="w3-xxlarge">Projets</h2>
         <p class="w3-large">Mes réalisations récentes</p>
 
         <div class="projects w3-row">
-            <div class="project w3-col m6 l4"></div>
-            <div class="project w3-col m6 l4"></div>
-            <div class="project w3-col m6 l4"></div>
-            <div class="project w3-col m6 l4"></div>
-            <div class="project w3-col m6 l4"></div>
-            <div class="project w3-col m6 l4"></div>
+            <div class="project w3-col m6 l4">
+                <img src="/img/1.jpg" alt="" class="w3-image">
+                <div onclick="document.getElementById('title-1').style.display='block'">
+                    <div class="caption w3-padding-large w3-display-container">
+                        <h3>Title</h3>
+                        <i class="fas fa-search fa-3x w3-display-middle"></i>
+                    </div>
+                </div>
+                <div id="title-1" class="w3-modal ">
+                    <div class="w3-modal-content w3-animate-zoom">
+                        <div class="w3-container w3-white w3-padding-32">
+                            <span onclick="document.getElementById('title-1').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-pink w3-xxlarge">&times;</span>
+                            <h3 class="ct-text-dark-blue">Name of project</h3>
+                            <img src="/img/1.jpg" alt="" class="w3-image">
+                            <div class="description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque consectetur debitis eaque eius ex fuga impedit iste porro reprehenderit. Blanditiis consequatur doloribus, est minus praesentium quae quas sapiente sed!</p>
+                            </div>
+                            <div class="links">
+                                <a href="" class="w3-button ct-red ct-hover-pink">Essayer</a>
+                                <a href="" class="w3-button ct-dark-blue ct-hover-blue">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project w3-col m6 l4">
+                <img src="/img/2.jpg" alt="" class="w3-image">
+                <div onclick="document.getElementById('title-2').style.display='block'">
+                    <div class="caption w3-padding-large w3-display-container">
+                        <h3>Title</h3>
+                        <i class="fas fa-search fa-3x w3-display-middle"></i>
+                    </div>
+                </div>
+                <div id="title-2" class="w3-modal ">
+                    <div class="w3-modal-content w3-animate-zoom">
+                        <div class="w3-container w3-white w3-padding-32">
+                            <span onclick="document.getElementById('title-2').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-pink w3-xxlarge">&times;</span>
+                            <h3 class="ct-text-dark-blue">Name of project</h3>
+                            <img src="/img/2.jpg" alt="" class="w3-image">
+                            <div class="description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque consectetur debitis eaque eius ex fuga impedit iste porro reprehenderit. Blanditiis consequatur doloribus, est minus praesentium quae quas sapiente sed!</p>
+                            </div>
+                            <div class="links">
+                                <a href="" class="w3-button ct-red ct-hover-pink">Essayer</a>
+                                <a href="" class="w3-button ct-dark-blue ct-hover-blue">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project w3-col m6 l4">
+                <img src="/img/3.jpg" alt="" class="w3-image">
+                <div onclick="document.getElementById('title-3').style.display='block'">
+                    <div class="caption w3-padding-large w3-display-container">
+                        <h3>Title</h3>
+                        <i class="fas fa-search fa-3x w3-display-middle"></i>
+                    </div>
+                </div>
+                <div id="title-3" class="w3-modal ">
+                    <div class="w3-modal-content w3-animate-zoom">
+                        <div class="w3-container w3-white w3-padding-32">
+                            <span onclick="document.getElementById('title-3').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-pink w3-xxlarge">&times;</span>
+                            <h3 class="ct-text-dark-blue">Name of project</h3>
+                            <img src="/img/3.jpg" alt="" class="w3-image">
+                            <div class="description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque consectetur debitis eaque eius ex fuga impedit iste porro reprehenderit. Blanditiis consequatur doloribus, est minus praesentium quae quas sapiente sed!</p>
+                            </div>
+                            <div class="links">
+                                <a href="" class="w3-button ct-red ct-hover-pink">Essayer</a>
+                                <a href="" class="w3-button ct-dark-blue ct-hover-blue">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project w3-col m6 l4">
+                <img src="/img/4.jpg" alt="" class="w3-image">
+                <div onclick="document.getElementById('title-4').style.display='block'">
+                    <div class="caption w3-padding-large w3-display-container">
+                        <h3>Title</h3>
+                        <i class="fas fa-search fa-3x w3-display-middle"></i>
+                    </div>
+                </div>
+                <div id="title-4" class="w3-modal ">
+                    <div class="w3-modal-content w3-animate-zoom">
+                        <div class="w3-container w3-white w3-padding-32">
+                            <span onclick="document.getElementById('title-4').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-pink w3-xxlarge">&times;</span>
+                            <h3 class="ct-text-dark-blue">Name of project</h3>
+                            <img src="/img/4.jpg" alt="" class="w3-image">
+                            <div class="description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque consectetur debitis eaque eius ex fuga impedit iste porro reprehenderit. Blanditiis consequatur doloribus, est minus praesentium quae quas sapiente sed!</p>
+                            </div>
+                            <div class="links">
+                                <a href="" class="w3-button ct-red ct-hover-pink">Essayer</a>
+                                <a href="" class="w3-button ct-dark-blue ct-hover-blue">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project w3-col m6 l4">
+                <img src="/img/5.jpg" alt="" class="w3-image">
+                <div onclick="document.getElementById('title-5').style.display='block'">
+                    <div class="caption w3-padding-large w3-display-container">
+                        <h3>Title</h3>
+                        <i class="fas fa-search fa-3x w3-display-middle"></i>
+                    </div>
+                </div>
+                <div id="title-5" class="w3-modal ">
+                    <div class="w3-modal-content w3-animate-zoom">
+                        <div class="w3-container w3-white w3-padding-32">
+                            <span onclick="document.getElementById('title-5').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-pink w3-xxlarge">&times;</span>
+                            <h3 class="ct-text-dark-blue">Name of project</h3>
+                            <img src="/img/5.jpg" alt="" class="w3-image">
+                            <div class="description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque consectetur debitis eaque eius ex fuga impedit iste porro reprehenderit. Blanditiis consequatur doloribus, est minus praesentium quae quas sapiente sed!</p>
+                            </div>
+                            <div class="links">
+                                <a href="" class="w3-button ct-red ct-hover-pink">Essayer</a>
+                                <a href="" class="w3-button ct-dark-blue ct-hover-blue">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project w3-col m6 l4">
+                <img src="/img/6.jpg" alt="" class="w3-image">
+                <div onclick="document.getElementById('title-6').style.display='block'">
+                    <div class="caption w3-padding-large w3-display-container">
+                        <h3>Title</h3>
+                        <i class="fas fa-search fa-3x w3-display-middle"></i>
+                    </div>
+                </div>
+                <div id="title-6" class="w3-modal ">
+                    <div class="w3-modal-content w3-animate-zoom">
+                        <div class="w3-container w3-white w3-padding-32">
+                            <span onclick="document.getElementById('title-6').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-pink w3-xxlarge">&times;</span>
+                            <h3 class="ct-text-dark-blue">Name of project</h3>
+                            <img src="/img/6.jpg" alt="" class="w3-image">
+                            <div class="description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque consectetur debitis eaque eius ex fuga impedit iste porro reprehenderit. Blanditiis consequatur doloribus, est minus praesentium quae quas sapiente sed!</p>
+                            </div>
+                            <div class="links">
+                                <a href="" class="w3-button ct-red ct-hover-pink">Essayer</a>
+                                <a href="" class="w3-button ct-dark-blue ct-hover-blue">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 @endsection
