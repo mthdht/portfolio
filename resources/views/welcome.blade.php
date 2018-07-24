@@ -323,8 +323,55 @@
         </div>
     </section>
 
-    <section class="contact w3-padding-32" id="contact">
-        <h2 class="w3-xxlarge w3-center">Contact</h2>
+    <section class="contact w3-padding-32 w3-content" id="contact">
+        <div class="w3-container">
+            <h2 class="w3-xxlarge w3-center">Contact</h2>
+            <p class="w3-center">Besoin de moi? Une question ? Envoyez-moi un message !</p>
+        </div>
+
+        <div class="w3-col l6 w3-container ">
+            <form action="" method="post" class="w3-padding-24">
+                <input type="text" class="w3-input w3-border w3-margin-top" placeholder="Nom" value="" name="name">
+                <input type="text" class="w3-input w3-border w3-margin-top" placeholder="Email" value="" name="email">
+                <input type="text" class="w3-input w3-border w3-margin-top" placeholder="Sujet" value="" name="sujet">
+                <textarea name="message" id="" cols="30" rows="5" class="w3-input w3-border w3-margin-top" placeholder="Message"></textarea>
+                <div class="w3-center">
+                    <input type="submit" class="w3-button w3-round-xxlarge ct-red ct-hover-pink w3-margin-top w3-center">
+                </div>
+            </form>
+        </div>
+        <div class="w3-col l6 w3-padding-large ">
+            <h3 class="w3-center">
+                <i class="fas fa-info-circle"></i> Information
+            </h3>
+
+            <div class="w3-col m6 ct-dark-blue w3-padding w3-padding-16 w3-center">
+                <i class="fas fa-phone fa-2x"></i>
+                <p>06 28 66 00 48</p>
+            </div>
+
+            <div class="w3-col m6 ct-blue w3-padding-16 w3-center">
+                <i class="fas fa-map-marker-alt fa-2x"></i>
+                <p>Lyon et sa métropôle</p>
+            </div>
+
+            <div class="w3-col w3-red w3-padding-16 w3-padding w3-center">
+                <i class="fas fa-envelope fa-2x"></i>
+                <p>matthieu.dehondt@gmail.com</p>
+            </div>
+
+            {{--<p class="w3-large">
+                <i class="fas fa-phone ct-text-dark-blue"></i> <b>06 28 66 00 48</b>
+            </p>
+
+            <p class="w3-large">
+                <i class="fas fa-envelope ct-text-blue"></i> <b>matthieu.dehondt@gmail.com</b>
+            </p>
+
+            <p class="w3-large">
+                <i class="fas fa-map-marker-alt ct-text-red"></i> <b>Lyon et sa métropole</b>
+            </p>--}}
+        </div>
     </section>
 @endsection
 
