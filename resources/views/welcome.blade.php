@@ -2,20 +2,22 @@
 
 @section('jumbotron')
     <div class="jumbotron ct-camel-light">
-        <div class="w3-row w3-center">
+        <div class="w3-center row w3-container w3-padding-48">
             <div class="w3-col m6 l6 me">
-                <img src="/img/moi.jpg" alt="photo de matthieu dehondt" class="w3-circle w3-image w3-padding-large" width="300px">
+                <img src="/img/moi.jpg" alt="photo de matthieu dehondt" class="w3-circle w3-image" width="200" height="200">
                 <div class="">
-                    <h1>Matthieu Dehondt</h1>
+                    <h1 class="w3-xlarge">Matthieu Dehondt</h1>
                     <p class="w3-large">Développeur | Formateur</p>
                 </div>
             </div>
 
-            <div class="w3-col m6 l6 w3-hide-small w3-left-align w3-padding-24 presentation w3-container">
-                <h2 class="w3-small"><b>BIENVENUE SUR MON SITE !</b></h2>
-                <h3 class="w3-xlarge">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, quaerat.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet aspernatur autem consectetur iusto libero magni modi molestiae mollitia, natus nisi officia quas quibusdam quos recusandae totam ut voluptas voluptates?</p>
-                <button class="w3-button w3-round-xxlarge ct-pink ct-hover-red">En savoir plus</button>
+            <hr style="width: 100%; border-top-color: #15959F; margin: 0" class="w3-hide-medium w3-hide-large">
+
+            <div class="w3-col m6 l5 w3-left-align about w3-margin-top">
+                <h2 class="w3-small welcome"><b>BIENVENUE SUR MON SITE !</b></h2>
+                <h3 class="w3-xlarge">Bonjour, je suis formateur et développeur web basé sur Lyon</h3>
+                <p>Principalement autodidacte et passionné d'informatique, je me suis formé dans le développement web. Maîtrisant plusieurs technologies du web, j'ai envie de rejoindre un projet innovant et épanouissant.</p>
+                <a href="#projets" class="w3-button w3-round-xxlarge ct-pink ct-hover-red more w3-large w3-padding-large"><b>Voir Projets</b></a>
             </div>
         </div>
     </div>
@@ -28,7 +30,7 @@
                 <div class="w3-center w3-container w3-padding-32">
                     <i class="fas fa-archive fa-4x"></i>
                     <h3>Mes projets</h3>
-                    <p class="w3-large">Découvrir mes différents projets personnel, réalisations et travaux en cour !</p>
+                    <p class="w3-large" style="margin-bottom: 0">Découvrir mes différents projets personnel, réalisations et travaux en cour !</p>
                 </div>
             </a>
         </div>
@@ -38,7 +40,7 @@
                 <div class="w3-center w3-container w3-padding-32">
                     <i class="fas fa-gamepad fa-4x"></i>
                     <h3>Mes jeu</h3>
-                    <p class="w3-large">Jouer à des reproduction de jeu: Mastermind, Jeu des Paires, Morpion, Shi-Fu-Mi ...!</p>
+                    <p class="w3-large" style="margin-bottom: 0">Jouer à des reproduction de jeu: Mastermind, Jeu des Paires, Morpion, Shi-Fu-Mi ...!</p>
                 </div>
             </a>
         </div>
@@ -48,7 +50,7 @@
                 <div class="w3-center w3-container w3-padding-32">
                     <i class="fas fa-book fa-4x"></i>
                     <h3>Mes cours</h3>
-                    <p class="w3-large">Apprendre le développement web avec différents cours sur HTML, CSS, Javascript et PHP</p>
+                    <p class="w3-large" style="margin-bottom: 0">Apprendre le développement web avec des cours sur HTML, CSS, Javascript et PHP</p>
                 </div>
             </a>
         </div>
@@ -163,11 +165,11 @@
         </div>
     </section>
 
-    <section class="w3-padding-48 w3-center ct-dark-blue">
-        <h2 class="w3-xxlarge">Projets</h2>
+    <section class="w3-padding-48 w3-center ct-dark-blue " >
+        <h2 class="w3-xxlarge" id="projets">Projets</h2>
         <p class="w3-large">Mes réalisations récentes</p>
 
-        <div class="projects w3-row">
+        <div class="projects w3-row w3-margin-bottom">
             <div class="project w3-col m6 l4">
                 <img src="/img/1.jpg" alt="" class="w3-image">
                 <div onclick="document.getElementById('title-1').style.display='block'" style="cursor: pointer">
@@ -324,6 +326,10 @@
                 </div>
             </div>
         </div>
+
+        <a href="/projets" class="w3-button w3-round-xxlarge ct-red ct-hover-pink w3-margin-top w3-large w3-padding-large">
+            <b>Voir plus</b>
+        </a>
     </section>
 
     <section class="contact w3-padding-32 w3-content" id="contact">
@@ -339,7 +345,7 @@
                 <input type="text" class="w3-input w3-border w3-margin-top" placeholder="Sujet" value="" name="sujet">
                 <textarea name="message" id="" cols="30" rows="5" class="w3-input w3-border w3-margin-top" placeholder="Message"></textarea>
                 <div class="w3-center">
-                    <input type="submit" class="w3-button w3-round-xxlarge ct-red ct-hover-pink w3-margin-top w3-center">
+                    <button type="submit" class="w3-button w3-round-xxlarge ct-red ct-hover-pink w3-margin-top w3-center w3-large w3-padding-large"><b>Envoyer</b></button>
                 </div>
             </form>
         </div>
@@ -349,17 +355,17 @@
                 <i class="fas fa-info-circle"></i> Information
             </h3>
 
-            <div class="w3-col m6 ct-dark-blue w3-padding w3-padding-16 w3-center information">
+            <div class="w3-col m6 ct-dark-blue w3-padding w3-padding-24 w3-center information">
                 <i class="fas fa-phone fa-2x"></i>
                 <p>06 28 66 00 48</p>
             </div>
 
-            <div class="w3-col m6 ct-blue w3-padding-16 w3-center information">
+            <div class="w3-col m6 ct-blue w3-padding-24 w3-center information">
                 <i class="fas fa-map-marker-alt fa-2x"></i>
                 <p>Lyon et sa métropôle</p>
             </div>
 
-            <div class="w3-col w3-red w3-padding-16 w3-padding w3-center information">
+            <div class="w3-col w3-red w3-padding-24 w3-padding w3-center information">
                 <i class="fas fa-envelope fa-2x"></i>
                 <p>matthieu.dehondt@gmail.com</p>
             </div>

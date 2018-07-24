@@ -69,10 +69,12 @@
     <script>
         window.sr = ScrollReveal({ duration: 1000, delay: 300 });
         sr.reveal('.me', { origin: 'left' });
-        sr.reveal('.presentation', { origin: 'right', duration: 1500, delay: 500 });
+        sr.reveal('.about', { origin: 'right', duration: 1500, delay: 500, viewFactor: 0 });
         sr.reveal('.skillbar', { origin: 'bottom' }, 100);
         sr.reveal('.tool', { origin: 'right' }, 100 );
         sr.reveal('.information', { origin: 'right' }, 150 );
     </script>
+
+
 </body>
 </html>
