@@ -77,6 +77,30 @@ h1, h2, h3, h4, h5, h6 {
 .w3-animate-right{position:relative;animation:animateright 1.5s}
 .w3-animate-bottom{position:relative;animation:animatebottom 1.5s}
 
+@keyframes html {
+    from {width: 0%;} to {width: 90%;}
+}
+
+@keyframes css {
+    from {width: 0%;} to {width: 75%;}
+}
+
+@keyframes javascript {
+    from {width: 0%;} to {width: 70%;}
+}
+
+@keyframes mysql {
+    from {width: 0%;} to {width: 65%;}
+}
+
+@keyframes php {
+    from {width: 0%;} to {width: 80%;}
+}
+
+@keyframes laravel {
+    from {width: 0%;} to {width: 75%;}
+}
+
 
 
 /* ========== HEADER ========== */

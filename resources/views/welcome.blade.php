@@ -73,7 +73,7 @@
                 </div>
 
                 <div class="skillbar w3-dark-gray w3-margin-top">
-                    <div class="html w3-padding-large w3-blue" style="width: 75%">
+                    <div class="css w3-padding-large w3-blue" style="width: 75%">
                         <div class="skill-title w3-left">
                             <b>CSS</b>
                         </div>
@@ -84,7 +84,7 @@
                 </div>
 
                 <div class="skillbar w3-dark-gray w3-margin-top">
-                    <div class="html w3-padding-large w3-amber w3-text-white" style="width: 70%">
+                    <div class="javascript w3-padding-large w3-amber w3-text-white" style="width: 70%">
                         <div class="skill-title w3-left">
                             <b>JAVASCRIPT</b>
                         </div>
@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="skillbar w3-dark-gray w3-margin-top">
-                    <div class="html w3-padding-large w3-green" style="width: 65%">
+                    <div class="mysql w3-padding-large w3-green" style="width: 65%">
                         <div class="skill-title w3-left">
                             <b>MySQL</b>
                         </div>
@@ -106,7 +106,7 @@
                 </div>
 
                 <div class="skillbar w3-dark-gray w3-margin-top">
-                    <div class="html w3-padding-large w3-blue-gray" style="width: 80%">
+                    <div class="php w3-padding-large w3-blue-gray" style="width: 80%">
                         <div class="skill-title w3-left">
                             <b>PHP</b>
                         </div>
@@ -117,7 +117,7 @@
                 </div>
 
                 <div class="skillbar w3-dark-gray w3-margin-top">
-                    <div class="html w3-padding-large w3-deep-orange" style="width: 75%">
+                    <div class="laravel w3-padding-large w3-deep-orange" style="width: 75%">
                         <div class="skill-title w3-left">
                             <b>LARAVEL</b>
                         </div>
