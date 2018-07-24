@@ -11,8 +11,11 @@
                 </div>
             </div>
 
-            <div class="w3-col m6 l6 w3-hide-small w3-left-align w3-padding-32 presentation">
+            <div class="w3-col m6 l6 w3-hide-small w3-left-align w3-padding-24 presentation w3-container">
                 <h2 class="w3-small"><b>BIENVENUE SUR MON SITE !</b></h2>
+                <h3 class="w3-xlarge">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, quaerat.</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet aspernatur autem consectetur iusto libero magni modi molestiae mollitia, natus nisi officia quas quibusdam quos recusandae totam ut voluptas voluptates?</p>
+                <button class="w3-button w3-round-xxlarge ct-pink ct-hover-red">En savoir plus</button>
             </div>
         </div>
     </div>
@@ -340,22 +343,23 @@
                 </div>
             </form>
         </div>
-        <div class="w3-col l6 w3-padding-large ">
+
+        <div class="w3-col l6 w3-padding-large">
             <h3 class="w3-center">
                 <i class="fas fa-info-circle"></i> Information
             </h3>
 
-            <div class="w3-col m6 ct-dark-blue w3-padding w3-padding-16 w3-center">
+            <div class="w3-col m6 ct-dark-blue w3-padding w3-padding-16 w3-center information">
                 <i class="fas fa-phone fa-2x"></i>
                 <p>06 28 66 00 48</p>
             </div>
 
-            <div class="w3-col m6 ct-blue w3-padding-16 w3-center">
+            <div class="w3-col m6 ct-blue w3-padding-16 w3-center information">
                 <i class="fas fa-map-marker-alt fa-2x"></i>
                 <p>Lyon et sa métropôle</p>
             </div>
 
-            <div class="w3-col w3-red w3-padding-16 w3-padding w3-center">
+            <div class="w3-col w3-red w3-padding-16 w3-padding w3-center information">
                 <i class="fas fa-envelope fa-2x"></i>
                 <p>matthieu.dehondt@gmail.com</p>
             </div>
