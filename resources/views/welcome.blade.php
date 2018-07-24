@@ -22,7 +22,7 @@
     <div class="services w3-row">
         <div class="w3-col m6 l4 ct-dark-blue w3-hover-opacity service">
             <a href="projets">
-                <div class="w3-center w3-padding-large w3-padding-32">
+                <div class="w3-center w3-container w3-padding-32">
                     <i class="fas fa-archive fa-4x"></i>
                     <h3>Mes projets</h3>
                     <p class="w3-large">Découvrir mes différents projets personnel, réalisations et travaux en cour !</p>
@@ -32,7 +32,7 @@
 
         <div class="w3-col m6 l4 ct-blue w3-hover-opacity service">
             <a href="">
-                <div class="w3-center w3-padding-large w3-padding-32">
+                <div class="w3-center w3-container w3-padding-32">
                     <i class="fas fa-gamepad fa-4x"></i>
                     <h3>Mes jeu</h3>
                     <p class="w3-large">Jouer à des reproduction de jeu: Mastermind, Jeu des Paires, Morpion, Shi-Fu-Mi ...!</p>
@@ -42,7 +42,7 @@
 
         <div class="w3-col l4 ct-red w3-hover-opacity service">
             <a href="">
-                <div class="w3-center w3-padding-large w3-padding-32">
+                <div class="w3-center w3-container w3-padding-32">
                     <i class="fas fa-book fa-4x"></i>
                     <h3>Mes cours</h3>
                     <p class="w3-large">Apprendre le développement web avec différents cours sur HTML, CSS, Javascript et PHP</p>
@@ -167,7 +167,7 @@
         <div class="projects w3-row">
             <div class="project w3-col m6 l4">
                 <img src="/img/1.jpg" alt="" class="w3-image">
-                <div onclick="document.getElementById('title-1').style.display='block'">
+                <div onclick="document.getElementById('title-1').style.display='block'" style="cursor: pointer">
                     <div class="caption w3-padding-large w3-display-container">
                         <h3>Title</h3>
                         <i class="fas fa-search fa-3x w3-display-middle"></i>
@@ -176,15 +176,15 @@
                 <div id="title-1" class="w3-modal ">
                     <div class="w3-modal-content w3-animate-zoom">
                         <div class="w3-container w3-white w3-padding-32">
-                            <span onclick="document.getElementById('title-1').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-pink w3-xxlarge">&times;</span>
+                            <span onclick="document.getElementById('title-1').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-text-pink w3-xxlarge w3-hover-none">&times;</span>
                             <h3 class="ct-text-dark-blue">Name of project</h3>
                             <img src="/img/1.jpg" alt="" class="w3-image">
                             <div class="description">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque consectetur debitis eaque eius ex fuga impedit iste porro reprehenderit. Blanditiis consequatur doloribus, est minus praesentium quae quas sapiente sed!</p>
                             </div>
                             <div class="links">
-                                <a href="" class="w3-button ct-red ct-hover-pink">Essayer</a>
-                                <a href="" class="w3-button ct-dark-blue ct-hover-blue">Github</a>
+                                <a href="" class="w3-button w3-round-xxlarge ct-red ct-hover-pink">Essayer</a>
+                                <a href="" class="w3-button w3-round-xxlarge ct-dark-blue ct-hover-blue">Github</a>
                             </div>
                         </div>
                     </div>
@@ -193,7 +193,7 @@
 
             <div class="project w3-col m6 l4">
                 <img src="/img/2.jpg" alt="" class="w3-image">
-                <div onclick="document.getElementById('title-2').style.display='block'">
+                <div onclick="document.getElementById('title-2').style.display='block'" style="cursor: pointer">
                     <div class="caption w3-padding-large w3-display-container">
                         <h3>Title</h3>
                         <i class="fas fa-search fa-3x w3-display-middle"></i>
@@ -202,15 +202,15 @@
                 <div id="title-2" class="w3-modal ">
                     <div class="w3-modal-content w3-animate-zoom">
                         <div class="w3-container w3-white w3-padding-32">
-                            <span onclick="document.getElementById('title-2').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-pink w3-xxlarge">&times;</span>
+                            <span onclick="document.getElementById('title-2').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-text-pink w3-hover-none w3-xxlarge">&times;</span>
                             <h3 class="ct-text-dark-blue">Name of project</h3>
                             <img src="/img/2.jpg" alt="" class="w3-image">
                             <div class="description">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque consectetur debitis eaque eius ex fuga impedit iste porro reprehenderit. Blanditiis consequatur doloribus, est minus praesentium quae quas sapiente sed!</p>
                             </div>
                             <div class="links">
-                                <a href="" class="w3-button ct-red ct-hover-pink">Essayer</a>
-                                <a href="" class="w3-button ct-dark-blue ct-hover-blue">Github</a>
+                                <a href="" class="w3-button w3-round-xxlarge ct-red ct-hover-pink">Essayer</a>
+                                <a href="" class="w3-button w3-round-xxlarge ct-dark-blue ct-hover-blue">Github</a>
                             </div>
                         </div>
                     </div>
@@ -219,7 +219,7 @@
 
             <div class="project w3-col m6 l4">
                 <img src="/img/3.jpg" alt="" class="w3-image">
-                <div onclick="document.getElementById('title-3').style.display='block'">
+                <div onclick="document.getElementById('title-3').style.display='block'" style="cursor: pointer">
                     <div class="caption w3-padding-large w3-display-container">
                         <h3>Title</h3>
                         <i class="fas fa-search fa-3x w3-display-middle"></i>
@@ -228,15 +228,15 @@
                 <div id="title-3" class="w3-modal ">
                     <div class="w3-modal-content w3-animate-zoom">
                         <div class="w3-container w3-white w3-padding-32">
-                            <span onclick="document.getElementById('title-3').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-pink w3-xxlarge">&times;</span>
+                            <span onclick="document.getElementById('title-3').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-text-pink w3-hover-none w3-xxlarge">&times;</span>
                             <h3 class="ct-text-dark-blue">Name of project</h3>
                             <img src="/img/3.jpg" alt="" class="w3-image">
                             <div class="description">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque consectetur debitis eaque eius ex fuga impedit iste porro reprehenderit. Blanditiis consequatur doloribus, est minus praesentium quae quas sapiente sed!</p>
                             </div>
                             <div class="links">
-                                <a href="" class="w3-button ct-red ct-hover-pink">Essayer</a>
-                                <a href="" class="w3-button ct-dark-blue ct-hover-blue">Github</a>
+                                <a href="" class="w3-button w3-round-xxlarge ct-red ct-hover-pink">Essayer</a>
+                                <a href="" class="w3-button w3-round-xxlarge ct-dark-blue ct-hover-blue">Github</a>
                             </div>
                         </div>
                     </div>
@@ -245,7 +245,7 @@
 
             <div class="project w3-col m6 l4">
                 <img src="/img/4.jpg" alt="" class="w3-image">
-                <div onclick="document.getElementById('title-4').style.display='block'">
+                <div onclick="document.getElementById('title-4').style.display='block'" style="cursor: pointer">
                     <div class="caption w3-padding-large w3-display-container">
                         <h3>Title</h3>
                         <i class="fas fa-search fa-3x w3-display-middle"></i>
@@ -254,15 +254,15 @@
                 <div id="title-4" class="w3-modal ">
                     <div class="w3-modal-content w3-animate-zoom">
                         <div class="w3-container w3-white w3-padding-32">
-                            <span onclick="document.getElementById('title-4').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-pink w3-xxlarge">&times;</span>
+                            <span onclick="document.getElementById('title-4').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-text-pink w3-hover-none w3-xxlarge">&times;</span>
                             <h3 class="ct-text-dark-blue">Name of project</h3>
                             <img src="/img/4.jpg" alt="" class="w3-image">
                             <div class="description">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque consectetur debitis eaque eius ex fuga impedit iste porro reprehenderit. Blanditiis consequatur doloribus, est minus praesentium quae quas sapiente sed!</p>
                             </div>
                             <div class="links">
-                                <a href="" class="w3-button ct-red ct-hover-pink">Essayer</a>
-                                <a href="" class="w3-button ct-dark-blue ct-hover-blue">Github</a>
+                                <a href="" class="w3-button w3-round-xxlarge ct-red ct-hover-pink">Essayer</a>
+                                <a href="" class="w3-button w3-round-xxlarge ct-dark-blue ct-hover-blue">Github</a>
                             </div>
                         </div>
                     </div>
@@ -271,7 +271,7 @@
 
             <div class="project w3-col m6 l4">
                 <img src="/img/5.jpg" alt="" class="w3-image">
-                <div onclick="document.getElementById('title-5').style.display='block'">
+                <div onclick="document.getElementById('title-5').style.display='block'" style="cursor: pointer">
                     <div class="caption w3-padding-large w3-display-container">
                         <h3>Title</h3>
                         <i class="fas fa-search fa-3x w3-display-middle"></i>
@@ -280,15 +280,15 @@
                 <div id="title-5" class="w3-modal ">
                     <div class="w3-modal-content w3-animate-zoom">
                         <div class="w3-container w3-white w3-padding-32">
-                            <span onclick="document.getElementById('title-5').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-pink w3-xxlarge">&times;</span>
+                            <span onclick="document.getElementById('title-5').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-text-pink w3-hover-none w3-xxlarge">&times;</span>
                             <h3 class="ct-text-dark-blue">Name of project</h3>
                             <img src="/img/5.jpg" alt="" class="w3-image">
                             <div class="description">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque consectetur debitis eaque eius ex fuga impedit iste porro reprehenderit. Blanditiis consequatur doloribus, est minus praesentium quae quas sapiente sed!</p>
                             </div>
                             <div class="links">
-                                <a href="" class="w3-button ct-red ct-hover-pink">Essayer</a>
-                                <a href="" class="w3-button ct-dark-blue ct-hover-blue">Github</a>
+                                <a href="" class="w3-button w3-round-xxlarge ct-red ct-hover-pink">Essayer</a>
+                                <a href="" class="w3-button w3-round-xxlarge ct-dark-blue ct-hover-blue">Github</a>
                             </div>
                         </div>
                     </div>
@@ -297,7 +297,7 @@
 
             <div class="project w3-col m6 l4">
                 <img src="/img/6.jpg" alt="" class="w3-image">
-                <div onclick="document.getElementById('title-6').style.display='block'">
+                <div onclick="document.getElementById('title-6').style.display='block'" style="cursor: pointer">
                     <div class="caption w3-padding-large w3-display-container">
                         <h3>Title</h3>
                         <i class="fas fa-search fa-3x w3-display-middle"></i>
@@ -306,21 +306,25 @@
                 <div id="title-6" class="w3-modal ">
                     <div class="w3-modal-content w3-animate-zoom">
                         <div class="w3-container w3-white w3-padding-32">
-                            <span onclick="document.getElementById('title-6').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-pink w3-xxlarge">&times;</span>
+                            <span onclick="document.getElementById('title-6').style.display='none'" class="w3-button w3-display-topright ct-text-red ct-hover-text-pink w3-hover-none w3-xxlarge">&times;</span>
                             <h3 class="ct-text-dark-blue">Name of project</h3>
                             <img src="/img/6.jpg" alt="" class="w3-image">
                             <div class="description">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque consectetur debitis eaque eius ex fuga impedit iste porro reprehenderit. Blanditiis consequatur doloribus, est minus praesentium quae quas sapiente sed!</p>
                             </div>
                             <div class="links">
-                                <a href="" class="w3-button ct-red ct-hover-pink">Essayer</a>
-                                <a href="" class="w3-button ct-dark-blue ct-hover-blue">Github</a>
+                                <a href="" class="w3-button w3-round-xxlarge ct-red ct-hover-pink">Essayer</a>
+                                <a href="" class="w3-button w3-round-xxlarge ct-dark-blue ct-hover-blue">Github</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="contact w3-padding-32" id="contact">
+        <h2 class="w3-xxlarge w3-center">Contact</h2>
     </section>
 @endsection
 
