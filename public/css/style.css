@@ -1,0 +1,177 @@
+/**
+ * Style for portfolio website
+ * AUTHOR: mthdht
+ */
+
+/* FONT */
+.coda {
+    font-family: 'Coda Caption', sans-serif;
+}
+
+
+/* ========== COLORS ============ */
+
+/* theme: Color-theme */
+.ct-dark-blue, .ct-hover-dark-blue:hover {
+    background-color: #133046 !important;
+    color: #FFF !important;
+}
+
+.ct-text-dark-blue, .ct-hover-text-dark-blue:hover {
+    color: #133046 !important;
+}
+
+.ct-blue, .ct-hover-blue:hover {
+    background-color: #15959F !important;
+    color: #FFF !important;
+}
+
+.ct-text-blue, .ct-hover-text-blue:hover {
+    color: #15959F !important;
+}
+
+.ct-camel-light {
+    background-color: #F1E4B3 !important;
+}
+
+.ct-text-camel-light {
+    color: #F1E4B3 !important;
+}
+
+.ct-pink, .ct-hover-pink:hover {
+    background-color: #EC9770 !important;
+    color: #FFFFFF !important;
+}
+
+.ct-text-pink, .ct-hover-text-pink:hover {
+    color: #EC9770 !important;
+}
+
+.ct-red, .ct-hover-red:hover {
+    background-color: #C7402D !important;
+    color: #FFFFFF !important;
+}
+
+.ct-text-red, .ct-hover-text-red:hover {
+    color: #C7402D !important;
+}
+
+/* theme: Cpop1 */
+
+/* theme: Sunset-Sky */
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.w3-animate-left{position:relative;animation:animateleft 1.5s}
+.w3-animate-right{position:relative;animation:animateright 1.5s}
+.w3-animate-bottom{position:relative;animation:animatebottom 1.5s}
+
+@keyframes html {
+    from {width: 0%;} to {width: 90%;}
+}
+
+@keyframes css {
+    from {width: 0%;} to {width: 75%;}
+}
+
+@keyframes javascript {
+    from {width: 0%;} to {width: 70%;}
+}
+
+@keyframes mysql {
+    from {width: 0%;} to {width: 65%;}
+}
+
+@keyframes php {
+    from {width: 0%;} to {width: 80%;}
+}
+
+@keyframes laravel {
+    from {width: 0%;} to {width: 75%;}
+}
+
+
+
+/* ========== HEADER ========== */
+
+.jumbotron {
+    /*
+    margin-top: 80px;
+    */
+    overflow: hidden;
+}
+
+.me, .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.more {
+    align-self: center;
+}
+
+.about {
+    align-items: stretch;                                                                                                                                                                   : start;
+}
+
+/* ========== END HEADER ========== */
+
+/* ========== SKILLS ============== */
+
+.skillbar div {
+    overflow: hidden;
+}
+/* ========== END SKILLS ============== */
+
+/* ========== PORTFOLIO =============== */
+
+.project {
+    position: relative;
+}
+
+.project:hover .caption {
+    display: block;
+}
+
+.caption {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(199, 64, 45, .8);
+    display: none;
+}
+
+/* ========== END PORTFOLIO =============== */
+
+/*========================================================
+                  MEDIA QUERIES
+  ======================================================== */
+
+@media (min-width: 768px) {
+
+    .me img {
+        width: 300px;
+        height: 300px;
+    }
+    .service {
+        min-height: 270px;
+    }
+
+    .more {
+        align-self: start;
+    }
+}

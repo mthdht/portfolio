@@ -9,71 +9,75 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+<body class="w3-text-dark-gray">
+    <header>
+        <nav class="w3-bar ct-dark-blue">
+            <div class="w3-content w3-center">
+                <a class="w3-bar-item w3-left w3-hide-large w3-hide-medium ct-hover-blue" onclick="w3_open()">
+                    <img src="{{ asset('img/md-white.png') }}" alt="logo MD" width="43" class="w3-image" >
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                <a href="" class="w3-bar-item w3-large coda w3-padding-16 ct-hover-blue">
+                    <img src="{{ asset('img/md-white.png') }}" alt="logo MD" width="50" class="w3-image w3-hide-small" >
+                    <b>Matthieu Dehondt</b>
+                </a>
 
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+                <div class="w3-right w3-padding-16 w3-hide-small">
+                    <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Projets</b></a>
+                    <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Games</b></a>
+                    <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Cours</b></a>
+                    <a href="" class="w3-bar-item w3-large ct-hover-blue"><b>Contact</b></a>
                 </div>
             </div>
-        </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+            <div class="w3-sidebar w3-bar-block w3-border-right w3-text-white ct-dark-blue" style="display:none;z-index: 10" id="mySidebar">
+                <button onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-text-white">Close &times;</button>
+                <a href="#" class="w3-bar-item w3-button w3-text-teal">Acceuil</a>
+                <a href="#" class="w3-bar-item w3-button">Chapitres</a>
+                <a href="#" class="w3-bar-item w3-button">A propos</a>
+            </div>
+        </nav>
+        @yield('jumbotron')
+    </header>
+
+    <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+    <main class="w3-main">
+        @yield('content')
+    </main>
+
+    <script>
+        function w3_open(elem) {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+        function w3_close() {
+            console.log('close');
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+    </script>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script>
+        window.sr = ScrollReveal({ duration: 1000, delay: 300 });
+
+        sr.reveal('.me', { origin: 'left' });
+        sr.reveal('.about', { origin: 'right', duration: 1500, delay: 500, viewFactor: 0 });
+        sr.reveal('.skillbar', { origin: 'bottom', beforeReveal: function (domEl) {
+            domEl.children[0].style.animation = domEl.children[0].classList[0] + ' 3s';
+            }, }, 100);
+        sr.reveal('.tool', { origin: 'right' }, 100 );
+        sr.reveal('.information', { origin: 'right' }, 150 );
+    </script>
+
+
 </body>
 </html>
