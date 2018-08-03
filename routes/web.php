@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/memory', 'MemoryController@index');
+Route::get('/memory/ranking', 'MemoryController@ranking');
+Route::post('/memory/add', 'MemoryController@store');
+Route::get('/memory/user-scores', 'MemoryController@userScores');
