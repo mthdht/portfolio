@@ -1,0 +1,12 @@
+.card {
+    height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+div.card[class*="w3-"] img {
+    display: none;
+}
+div.card[class*="w3-gray"] img {
+    display: block;
+}
