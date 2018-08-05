@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './Header'
 import Board from './Board'
+import Scores from './Scores'
 import ReactDOM from "react-dom";
 import registerServiceWorker from './registerServiceWorker';
 
@@ -10,8 +12,13 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            colorNumber: 6
-        }
+            colorNumber: 6,
+            colorsArray: this.shuffle(colors.slice(0, this.colorNumber).concat(colors.slice(0, this.colorNumber))),
+            userScores: [],
+            ranking: []
+        };
+
+        this.renderScores = this.renderScores.bind(this)
     }
 
     shuffle(a) {
@@ -25,11 +32,29 @@ class App extends Component {
         return a;
     };
 
+    renderScores() {
+        axios.get('/memory/user-scores')
+            .then((response) => {
+                this.setState({
+                    userScores: response.data
+                });
+                document.getElementById('scores-modal').style.display = 'block';
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
     render() {
-        const colorsArray = colors.slice(0, this.state.colorNumber);
+        const colorsArray = this.state.colorsArray;
+        const scores = this.state.userScores;
         return (
             <div className="App">
-                <Board colors={this.shuffle(colorsArray.concat(colorsArray))} />
+                <Header renderScores={this.renderScores}/>
+                <div className="w3-main">
+                    <Scores scores={scores}/>
+                    <Board colors={colorsArray} />
+                </div>
             </div>
         );
     }
