@@ -56413,8 +56413,7 @@ var App = function (_Component) {
         var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
         _this.state = {
-            colorNumber: 6,
-            colorsArray: _this.shuffle(colors.slice(0, _this.colorNumber).concat(colors.slice(0, _this.colorNumber))),
+            colorsArray: _this.getColorsArray(6),
             userScores: [],
             ranking: []
         };
@@ -56434,6 +56433,12 @@ var App = function (_Component) {
                 a[j] = x;
             }
             return a;
+        }
+    }, {
+        key: 'getColorsArray',
+        value: function getColorsArray(number) {
+            var colorsArray = colors.slice(0, number);
+            return this.shuffle(colorsArray.concat(colorsArray));
         }
     }, {
         key: 'renderScores',
@@ -56623,13 +56628,12 @@ var Board = function (_Component) {
                 });
                 setTimeout(function () {
                     if (_this2.state.pairs.length === _this2.cards.length) {
-                        alert('vous avez gagné');
                         // send score
                         axios.post('/memory/add', {
                             score: 90,
                             guesses: 10
                         }).then(function (response) {
-                            console.log(response.data);
+                            return response.data;
                         }).catch(function (error) {
                             console.log(error);
                         });

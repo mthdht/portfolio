@@ -12,13 +12,12 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            colorNumber: 6,
-            colorsArray: this.shuffle(colors.slice(0, this.colorNumber).concat(colors.slice(0, this.colorNumber))),
+            colorsArray: this.getColorsArray(6),
             userScores: [],
             ranking: []
         };
 
-        this.renderScores = this.renderScores.bind(this)
+        this.renderScores = this.renderScores.bind(this);
     }
 
     shuffle(a) {
@@ -31,6 +30,11 @@ class App extends Component {
         }
         return a;
     };
+
+    getColorsArray(number) {
+        const colorsArray = colors.slice(0, number);
+        return this.shuffle(colorsArray.concat(colorsArray));
+    }
 
     renderScores() {
         axios.get('/memory/user-scores')
