@@ -61,13 +61,12 @@ class Board extends Component {
             });
             setTimeout(() => {
                 if (this.state.pairs.length === this.cards.length) {
-                    alert('vous avez gagné');
                     // send score
                     axios.post('/memory/add', {
                         score: 90,
                         guesses: 10
                     }).then(function (response) {
-                            console.log(response.data);
+                            return response.data;
                     }).catch(function (error) {
                             console.log(error);
                     });
