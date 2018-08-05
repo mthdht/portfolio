@@ -20,7 +20,7 @@ class MemoryController extends Controller
      */
     public function index()
     {
-        return view('memory.index');
+        return view('layouts.memory');
     }
 
     public function ranking()
@@ -42,7 +42,7 @@ class MemoryController extends Controller
 
     public function userScores()
     {
-        return Auth::user()->scores;
+        return Auth::user()->memoryScores;
     }
 
 }
