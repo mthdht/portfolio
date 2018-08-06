@@ -25,7 +25,13 @@ class MemoryController extends Controller
 
     public function ranking()
     {
-        return MemoryScore::all();
+        $scores = MemoryScore::all();
+        $returnScores= [];
+
+        foreach ($scores->sortByDesc("score")->take(20) as $score) {
+            $returnScores[] = array_merge(["user" => $score->user], $score->toArray());
+        }
+        return $returnScores;
     }
 
     /**
