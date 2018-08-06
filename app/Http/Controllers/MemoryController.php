@@ -43,7 +43,6 @@ class MemoryController extends Controller
     public function store(Request $request)
     {
         return Auth::user()->memoryScores()->create($request->all());
-        //return MemoryScore::create(array_merge($request->all(), ["user_id" => Auth::id()]));
     }
 
     public function userScores()

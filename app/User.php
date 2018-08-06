@@ -29,6 +29,6 @@ class User extends Authenticatable
 
     public function memoryScores()
     {
-        return $this->hasMany('App\MemoryScore');
+        return $this->hasMany('App\MemoryScore')->orderBy('score', 'desc');
     }
 }
