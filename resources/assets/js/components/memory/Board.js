@@ -123,18 +123,27 @@ class Board extends Component {
 
         return (
             <div className={"board"}>
-                <div className="cards w3-row">
+                <div className="controls w3-container w3-padding ct-blue">
+                    <div className="level w3-left w3-padding">
+                        <label htmlFor="level" className={"w3-hide-small"}>Difficulté: </label>
+                        <select name="" id="level" value={this.state.colorNumber} onChange={this.handleLevelChange} className={"w3-button ct-dark-blue"}>
+                            <option value="6">Facile</option>
+                            <option value="9">Moyen</option>
+                            <option value="12">Difficile</option>
+                            <option value="15">Expert</option>
+                        </select>
+                    </div>
+                    <div className="w3-padding w3-right">
+                        <button onClick={this.restart} className={"w3-button ct-dark-blue restart"}>Restart</button>
+                    </div>
+
+                    <p className={"guesses w3-center"}><b>Nombre d'essais: { this.state.guesses }</b></p>
+                </div>
+                <div className="cards w3-margin-top">
                     {cards}
                 </div>
 
-                <button onClick={this.restart}>Restart</button>
 
-                <select name="" id="" value={this.state.colorNumber} onChange={this.handleLevelChange}>
-                    <option value="6">Facile</option>
-                    <option value="9">Moyen</option>
-                    <option value="12">Difficile</option>
-                    <option value="15">Expert</option>
-                </select>
             </div>
         )
     }

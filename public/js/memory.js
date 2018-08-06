@@ -56520,7 +56520,7 @@ exports = module.exports = __webpack_require__(60)(false);
 
 
 // module
-exports.push([module.i, ".card {\n    height: 300px;\n    display: flex;\n    align-items: center;\n}\n\ndiv.card[class*=\"w3-\"] img {\n    display: none;\n}\ndiv.card[class*=\"w3-gray\"] img {\n    display: block;\n}\n\n.sidebar {\n    display:none;\n    z-index: 10;\n}\n\n.pointer {\n    cursor:pointer;\n}", ""]);
+exports.push([module.i, ".card {\n    height: 150px;\n    display: flex;\n    align-items: center;\n}\n\ndiv.card[class*=\"w3-\"] img {\n    display: none;\n}\ndiv.card[class*=\"w3-gray\"] img {\n    display: block;\n}\n\n.sidebar {\n    display:none;\n    z-index: 10;\n}\n\n.pointer {\n    cursor:pointer;\n}\n\n.controls {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.card-container {\n    padding: 5px;\n}\n\n@media (min-width: 768px) {\n    .card {\n        height: 200px;\n    }\n\n    .card-container {\n        padding: 10px;\n    }\n}\n\n@media (min-width: 992px) {\n    .card {\n        height: 250px;\n    }\n\n    .card-container {\n        padding: 15px;\n    }\n}", ""]);
 
 // exports
 
@@ -56843,37 +56843,64 @@ var Board = function (_Component) {
                 { className: "board" },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "div",
-                    { className: "cards w3-row" },
-                    cards
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "button",
-                    { onClick: this.restart },
-                    "Restart"
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "select",
-                    { name: "", id: "", value: this.state.colorNumber, onChange: this.handleLevelChange },
+                    { className: "controls w3-container w3-padding ct-blue" },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "option",
-                        { value: "6" },
-                        "Facile"
+                        "div",
+                        { className: "level w3-left w3-padding" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "label",
+                            { htmlFor: "level", className: "w3-hide-small" },
+                            "Difficult\xE9: "
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "select",
+                            { name: "", id: "level", value: this.state.colorNumber, onChange: this.handleLevelChange, className: "w3-button ct-dark-blue" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "option",
+                                { value: "6" },
+                                "Facile"
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "option",
+                                { value: "9" },
+                                "Moyen"
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "option",
+                                { value: "12" },
+                                "Difficile"
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "option",
+                                { value: "15" },
+                                "Expert"
+                            )
+                        )
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "option",
-                        { value: "9" },
-                        "Moyen"
+                        "div",
+                        { className: "w3-padding w3-right" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "button",
+                            { onClick: this.restart, className: "w3-button ct-dark-blue restart" },
+                            "Restart"
+                        )
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "option",
-                        { value: "12" },
-                        "Difficile"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "option",
-                        { value: "15" },
-                        "Expert"
+                        "p",
+                        { className: "guesses w3-center" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "b",
+                            null,
+                            "Nombre d'essais: ",
+                            this.state.guesses
+                        )
                     )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "div",
+                    { className: "cards w3-margin-top" },
+                    cards
                 )
             );
         }
@@ -56924,7 +56951,7 @@ var Card = function (_Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
-                { className: "w3-col m2 w3-padding-large", onClick: function onClick() {
+                { className: "card-container w3-col s2", onClick: function onClick() {
                         return _this2.handleClick(_this2.props.index);
                     } },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
