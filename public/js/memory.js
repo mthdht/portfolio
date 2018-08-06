@@ -56446,7 +56446,7 @@ var App = function (_Component) {
                     'div',
                     { className: 'w3-main' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Scores__["a" /* default */], { scores: scores }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Board__["a" /* default */], { reStart: this.reStart, changeLevel: this.changeLevel })
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Board__["a" /* default */], null)
                 )
             );
         }
@@ -56680,7 +56680,8 @@ var Board = function (_Component) {
             pairs: [],
             currentPair: [],
             cards: _this.generateCards(6),
-            colorNumber: 6
+            colorNumber: 6,
+            guesses: 0
         };
 
         _this.handleCardClick = _this.handleCardClick.bind(_this);
@@ -56730,9 +56731,13 @@ var Board = function (_Component) {
     }, {
         key: "handleCardClick",
         value: function handleCardClick(index) {
+            var _this2 = this;
+
             var _state2 = this.state,
                 currentPair = _state2.currentPair,
-                cards = _state2.cards;
+                cards = _state2.cards,
+                pairs = _state2.pairs,
+                colorNumber = _state2.colorNumber;
 
 
             if (currentPair.length === 2) {
@@ -56747,44 +56752,38 @@ var Board = function (_Component) {
             }
 
             if (currentPair.length === 1) {
-                this.handlePairAttempt(index);
-            }
-        }
-    }, {
-        key: "handlePairAttempt",
-        value: function handlePairAttempt(index) {
-            var _this2 = this;
-
-            var _state3 = this.state,
-                currentPair = _state3.currentPair,
-                pairs = _state3.pairs,
-                cards = _state3.cards;
-
-            currentPair.push(cards[index]);
-            this.setState({ currentPair: currentPair });
-
-            if (currentPair[0].face === currentPair[1].face && currentPair[0].id !== currentPair[1].id) {
-                this.setState({
-                    pairs: [].concat(_toConsumableArray(pairs), _toConsumableArray(currentPair))
+                currentPair.push(cards[index]);
+                this.setState(function (prevState) {
+                    return {
+                        guesses: prevState.guesses + 1,
+                        currentPair: currentPair
+                    };
                 });
+
+                if (currentPair[0].face === currentPair[1].face && currentPair[0].id !== currentPair[1].id) {
+                    this.setState({
+                        pairs: [].concat(_toConsumableArray(pairs), _toConsumableArray(currentPair))
+                    });
+                    setTimeout(function () {
+                        if (_this2.state.pairs.length === cards.length) {
+                            // send score
+                            axios.post('/memory/add', {
+                                score: colorNumber * 10 - _this2.state.guesses,
+                                guesses: _this2.state.guesses,
+                                difficulty: colorNumber === 6 ? "facile" : colorNumber === 9 ? "moyen" : colorNumber === 12 ? "difficile" : "expert"
+                            }).then(function (response) {
+                                console.log(response.data);
+                            }).catch(function (error) {
+                                console.log(error);
+                            });
+                        }
+                    }, 1000);
+                }
+
                 setTimeout(function () {
-                    if (_this2.state.pairs.length === cards.length) {
-                        // send score
-                        axios.post('/memory/add', {
-                            score: 90,
-                            guesses: 10
-                        }).then(function (response) {
-                            return response.data;
-                        }).catch(function (error) {
-                            console.log(error);
-                        });
-                    }
+                    return _this2.setState({ currentPair: [] });
                 }, 1000);
             }
-
-            setTimeout(function () {
-                return _this2.setState({ currentPair: [] });
-            }, 1000);
         }
     }, {
         key: "restart",
@@ -56962,12 +56961,22 @@ var Scores = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'td',
                         null,
+                        score.difficulty
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'td',
+                        null,
                         score.score
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'td',
                         null,
                         score.guesses
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'td',
+                        null,
+                        score.created_at
                     )
                 );
             });
@@ -57004,12 +57013,22 @@ var Scores = function (_Component) {
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'th',
                                         null,
+                                        'Difficult\xE9'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'th',
+                                        null,
                                         'Score'
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'th',
                                         null,
                                         'Nombre d\'essais'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'th',
+                                        null,
+                                        'Date'
                                     )
                                 )
                             ),

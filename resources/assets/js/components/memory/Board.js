@@ -10,7 +10,8 @@ class Board extends Component {
             pairs: [],
             currentPair: [],
             cards: this.generateCards(6),
-            colorNumber: 6
+            colorNumber: 6,
+            guesses: 0
         };
 
         this.handleCardClick = this.handleCardClick.bind(this);
@@ -50,7 +51,7 @@ class Board extends Component {
     }
 
     handleCardClick(index) {
-        const {currentPair, cards} = this.state;
+        const {currentPair, cards, pairs, colorNumber} = this.state;
 
         if (currentPair.length === 2) {
             return;
@@ -64,39 +65,36 @@ class Board extends Component {
         }
 
         if (currentPair.length === 1) {
-            this.handlePairAttempt(index);
+            currentPair.push(cards[index]);
+            this.setState((prevState) => ({
+                guesses: prevState.guesses + 1,
+                currentPair
+            }));
+
+            if (currentPair[0].face === currentPair[1].face && currentPair[0].id !== currentPair[1].id) {
+                this.setState({
+                    pairs: [...pairs, ...currentPair],
+                });
+                setTimeout(() => {
+                    if (this.state.pairs.length === cards.length) {
+                        // send score
+                        axios.post('/memory/add', {
+                            score: colorNumber * 10 - this.state.guesses,
+                            guesses: this.state.guesses,
+                            difficulty: colorNumber === 6 ? "facile" : colorNumber === 9 ? "moyen" : colorNumber === 12 ? "difficile" : "expert"
+                        }).then(function (response) {
+                            console.log(response.data);
+                        }).catch(function (error) {
+                            console.log(error);
+                        });
+                    }
+                }, 1000);
+            }
+
+            setTimeout(() => this.setState({currentPair: []}), 1000);
         }
 
     };
-
-    handlePairAttempt(index) {
-        const { currentPair, pairs, cards} = this.state;
-        currentPair.push(cards[index]);
-        this.setState({currentPair});
-
-        if (currentPair[0].face === currentPair[1].face && currentPair[0].id !== currentPair[1].id) {
-            this.setState({
-                pairs: [...pairs, ...currentPair],
-            });
-            setTimeout(() => {
-                if (this.state.pairs.length === cards.length) {
-                    // send score
-                    axios.post('/memory/add', {
-                        score: 90,
-                        guesses: 10
-                    }).then(function (response) {
-                            return response.data;
-                    }).catch(function (error) {
-                            console.log(error);
-                    });
-                }
-            }, 1000);
-
-        }
-
-        setTimeout(() => this.setState({currentPair: []}), 1000);
-
-    }
 
     restart() {
         const colorNumber = this.state.colorNumber;

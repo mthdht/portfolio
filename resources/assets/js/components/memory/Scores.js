@@ -12,8 +12,10 @@ class Scores extends Component {
     render() {
         const tablerow = this.props.scores.map((score) =>
             <tr key={score.id}>
+                <td>{ score.difficulty }</td>
                 <td>{ score.score }</td>
                 <td>{ score.guesses }</td>
+                <td>{ score.created_at }</td>
             </tr>
         );
 
@@ -28,8 +30,10 @@ class Scores extends Component {
                         <table className={"w3-table w3-striped w3-hoverable"}>
                             <thead>
                                 <tr>
+                                    <th>Difficulté</th>
                                     <th>Score</th>
                                     <th>Nombre d'essais</th>
+                                    <th>Date</th>
                                 </tr>
                             </thead>
                             <tbody>

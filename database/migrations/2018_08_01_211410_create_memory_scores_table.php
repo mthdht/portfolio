@@ -17,6 +17,7 @@ class CreateMemoryScoresTable extends Migration
             $table->increments('id');
             $table->integer('score');
             $table->integer('guesses');
+            $table->string('difficulty', 100);
             $table->integer('user_id')->unsigned();
             $table->timestamps();
         });

@@ -38,7 +38,7 @@ class App extends Component {
                 <Header renderScores={this.renderScores}/>
                 <div className="w3-main">
                     <Scores scores={scores}/>
-                    <Board reStart={this.reStart} changeLevel={this.changeLevel}/>
+                    <Board/>
                 </div>
             </div>
         );
