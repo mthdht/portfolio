@@ -56415,11 +56415,13 @@ var App = function (_Component) {
         _this.state = {
             colorsArray: _this.getColorsArray(6),
             userScores: [],
-            ranking: []
+            ranking: [],
+            colorNumber: 6
         };
 
         _this.renderScores = _this.renderScores.bind(_this);
         _this.reStart = _this.reStart.bind(_this);
+        _this.changeLevel = _this.changeLevel.bind(_this);
         return _this;
     }
 
@@ -56444,8 +56446,16 @@ var App = function (_Component) {
     }, {
         key: 'reStart',
         value: function reStart() {
+            var level = this.state.colorNumber;
             this.setState({
-                colorsArray: this.getColorsArray(6)
+                colorsArray: this.getColorsArray(level)
+            });
+        }
+    }, {
+        key: 'changeLevel',
+        value: function changeLevel(event) {
+            this.setState({
+                colorNumber: event.target.value
             });
         }
     }, {
@@ -56475,7 +56485,7 @@ var App = function (_Component) {
                     'div',
                     { className: 'w3-main' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Scores__["a" /* default */], { scores: scores }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Board__["a" /* default */], { colors: colorsArray, reStart: this.reStart })
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Board__["a" /* default */], { colors: colorsArray, reStart: this.reStart, changeLevel: this.changeLevel })
                 )
             );
         }
@@ -56709,7 +56719,8 @@ var Board = function (_Component) {
             cards: _this.generateCards()
         };
         _this.handleCardClick = _this.handleCardClick.bind(_this);
-        _this.handleRestartClick = _this.handleRestartClick.bind(_this);
+        _this.restart = _this.restart.bind(_this);
+        _this.handleLevelChange = _this.handleLevelChange.bind(_this);
         return _this;
     }
 
@@ -56797,8 +56808,8 @@ var Board = function (_Component) {
             }, 1000);
         }
     }, {
-        key: 'handleRestartClick',
-        value: function handleRestartClick() {
+        key: 'restart',
+        value: function restart() {
             this.props.reStart();
             this.setState({
                 cards: this.generateCards(),
@@ -56807,13 +56818,23 @@ var Board = function (_Component) {
             });
         }
     }, {
+        key: 'handleLevelChange',
+        value: function handleLevelChange(e) {
+            var _this3 = this;
+
+            this.props.changeLevel(e);
+            setTimeout(function () {
+                return _this3.restart();
+            }, 500);
+        }
+    }, {
         key: 'render',
         value: function render() {
-            var _this3 = this;
+            var _this4 = this;
 
             var cards = [];
             this.state.cards.forEach(function (card) {
-                cards.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Card__["a" /* default */], { face: card.face, status: _this3.getStatus(card.id), index: card.id, key: card.id, handleCardClick: _this3.handleCardClick }));
+                cards.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Card__["a" /* default */], { face: card.face, status: _this4.getStatus(card.id), index: card.id, key: card.id, handleCardClick: _this4.handleCardClick }));
             });
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -56826,8 +56847,34 @@ var Board = function (_Component) {
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'button',
-                    { onClick: this.handleRestartClick },
-                    'REstart'
+                    { onClick: this.restart },
+                    'Restart'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'select',
+                    { name: '', id: '', value: this.state.colorNumber, onChange: function onChange(e) {
+                            return _this4.handleLevelChange(e);
+                        } },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'option',
+                        { value: '6' },
+                        'Facile'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'option',
+                        { value: '9' },
+                        'Moyen'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'option',
+                        { value: '12' },
+                        'Difficile'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'option',
+                        { value: '15' },
+                        'Expert'
+                    )
                 )
             );
         }

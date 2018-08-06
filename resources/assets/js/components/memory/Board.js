@@ -10,7 +10,8 @@ class Board extends Component {
             cards: this.generateCards()
         };
         this.handleCardClick = this.handleCardClick.bind(this);
-        this.handleRestartClick = this.handleRestartClick.bind(this);
+        this.restart = this.restart.bind(this);
+        this.handleLevelChange = this.handleLevelChange.bind(this);
     }
 
     generateCards() {
@@ -80,13 +81,18 @@ class Board extends Component {
 
     }
 
-    handleRestartClick() {
+    restart() {
         this.props.reStart();
         this.setState({
             cards: this.generateCards(),
             pairs: [],
             currentPair: []
         });
+    }
+
+    handleLevelChange(e) {
+        this.props.changeLevel(e);
+        setTimeout(() => this.restart(), 500);
     }
 
     render() {
@@ -101,7 +107,14 @@ class Board extends Component {
                     {cards}
                 </div>
 
-                <button onClick={this.handleRestartClick}>REstart</button>
+                <button onClick={this.restart}>Restart</button>
+
+                <select name="" id="" value={this.state.colorNumber} onChange={(e) => this.handleLevelChange(e)}>
+                    <option value="6">Facile</option>
+                    <option value="9">Moyen</option>
+                    <option value="12">Difficile</option>
+                    <option value="15">Expert</option>
+                </select>
             </div>
         )
     }

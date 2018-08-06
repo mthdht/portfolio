@@ -14,11 +14,13 @@ class App extends Component {
         this.state = {
             colorsArray: this.getColorsArray(6),
             userScores: [],
-            ranking: []
+            ranking: [],
+            colorNumber: 6
         };
 
         this.renderScores = this.renderScores.bind(this);
         this.reStart = this.reStart.bind(this);
+        this.changeLevel = this.changeLevel.bind(this);
     }
 
     shuffle(a) {
@@ -38,8 +40,15 @@ class App extends Component {
     }
 
     reStart() {
+        const level = this.state.colorNumber;
         this.setState({
-            colorsArray: this.getColorsArray(6)
+            colorsArray: this.getColorsArray(level)
+        });
+    }
+    
+    changeLevel(event) {
+        this.setState({
+            colorNumber: event.target.value,
         });
     }
 
@@ -64,7 +73,7 @@ class App extends Component {
                 <Header renderScores={this.renderScores}/>
                 <div className="w3-main">
                     <Scores scores={scores}/>
-                    <Board colors={colorsArray} reStart={this.reStart}/>
+                    <Board colors={colorsArray} reStart={this.reStart} changeLevel={this.changeLevel}/>
                 </div>
             </div>
         );
