@@ -6,10 +6,11 @@ class Board extends Component {
         super(props);
         this.state = {
             pairs: [],
-            currentPair: []
+            currentPair: [],
+            cards: this.generateCards()
         };
-        this.cards = this.generateCards();
         this.handleCardClick = this.handleCardClick.bind(this);
+        this.handleRestartClick = this.handleRestartClick.bind(this);
     }
 
     generateCards() {
@@ -23,15 +24,15 @@ class Board extends Component {
     };
 
     getStatus(index) {
-        const {currentPair, pairs} = this.state;
+        const {currentPair, pairs, cards} = this.state;
 
-        if (currentPair.includes(this.cards[index]) || pairs.includes(this.cards[index])) {
+        if (currentPair.includes(cards[index]) || pairs.includes(cards[index])) {
             return "visible";
         } else return "hidden"
     }
 
     handleCardClick(index) {
-        const {currentPair} = this.state;
+        const {currentPair, cards} = this.state;
 
         if (currentPair.length === 2) {
             return;
@@ -39,7 +40,7 @@ class Board extends Component {
 
         if (currentPair.length === 0) {
             this.setState({
-                currentPair: [this.cards[index]]
+                currentPair: [cards[index]]
             });
             return;
         }
@@ -51,8 +52,8 @@ class Board extends Component {
     };
 
     handlePairAttempt(index) {
-        const { currentPair, pairs} = this.state;
-        currentPair.push(this.cards[index]);
+        const { currentPair, pairs, cards} = this.state;
+        currentPair.push(cards[index]);
         this.setState({currentPair});
 
         if (currentPair[0].face === currentPair[1].face && currentPair[0].id !== currentPair[1].id) {
@@ -60,7 +61,7 @@ class Board extends Component {
                 pairs: [...pairs, ...currentPair],
             });
             setTimeout(() => {
-                if (this.state.pairs.length === this.cards.length) {
+                if (this.state.pairs.length === cards.length) {
                     // send score
                     axios.post('/memory/add', {
                         score: 90,
@@ -79,15 +80,28 @@ class Board extends Component {
 
     }
 
+    handleRestartClick() {
+        this.props.reStart();
+        this.setState({
+            cards: this.generateCards(),
+            pairs: [],
+            currentPair: []
+        });
+    }
+
     render() {
         const cards = [];
-        this.cards.forEach((card) => {
+        this.state.cards.forEach((card) => {
             cards.push(<Card face={card.face} status={this.getStatus(card.id)} index={card.id} key={card.id} handleCardClick={this.handleCardClick}/>);
         });
 
         return (
-            <div className={"board w3-row"}>
-                {cards}
+            <div className={"board"}>
+                <div className="cards w3-row">
+                    {cards}
+                </div>
+
+                <button onClick={this.handleRestartClick}>REstart</button>
             </div>
         )
     }

@@ -18,6 +18,7 @@ class App extends Component {
         };
 
         this.renderScores = this.renderScores.bind(this);
+        this.reStart = this.reStart.bind(this);
     }
 
     shuffle(a) {
@@ -34,6 +35,12 @@ class App extends Component {
     getColorsArray(number) {
         const colorsArray = colors.slice(0, number);
         return this.shuffle(colorsArray.concat(colorsArray));
+    }
+
+    reStart() {
+        this.setState({
+            colorsArray: this.getColorsArray(6)
+        });
     }
 
     renderScores() {
@@ -57,7 +64,7 @@ class App extends Component {
                 <Header renderScores={this.renderScores}/>
                 <div className="w3-main">
                     <Scores scores={scores}/>
-                    <Board colors={colorsArray} />
+                    <Board colors={colorsArray} reStart={this.reStart}/>
                 </div>
             </div>
         );
