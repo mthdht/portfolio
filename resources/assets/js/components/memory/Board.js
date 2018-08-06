@@ -78,8 +78,10 @@ class Board extends Component {
                 setTimeout(() => {
                     if (this.state.pairs.length === cards.length) {
                         // send score
+                        const difficulty = colorNumber === 6 ? 1 : colorNumber === 9 ? 2 : colorNumber === 12 ? 3 : 4;
+                        const scoreFinal = colorNumber * colorNumber - this.state.guesses * difficulty;
                         axios.post('/memory/add', {
-                            score: colorNumber * 10 - this.state.guesses,
+                            score: scoreFinal > 0 ? scoreFinal : 0,
                             guesses: this.state.guesses,
                             difficulty: colorNumber === 6 ? "facile" : colorNumber === 9 ? "moyen" : colorNumber === 12 ? "difficile" : "expert"
                         }).then(function (response) {
@@ -101,13 +103,14 @@ class Board extends Component {
         this.setState({
             cards: this.generateCards(colorNumber),
             pairs: [],
-            currentPair: []
+            currentPair: [],
+            guesses: 0
         });
     }
 
     handleLevelChange(event) {
         this.setState({
-            colorNumber: event.target.value
+            colorNumber: parseInt(event.target.value)
         });
         setTimeout(() => this.restart(), 500);
     }
