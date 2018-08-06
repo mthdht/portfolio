@@ -1,23 +1,40 @@
 import React, { Component } from 'react';
 import Card from "./Card";
 
+const colors = ["red", "pink", "purple", "blue", "teal", "green", "light-green", "lime", "amber", "orange", "blue-gray", "brown", "pale-red", "deep-purple", "indigo",];
+
 class Board extends Component {
     constructor(props) {
         super(props);
         this.state = {
             pairs: [],
             currentPair: [],
-            cards: this.generateCards()
+            cards: this.generateCards(6),
+            colorNumber: 6
         };
+
         this.handleCardClick = this.handleCardClick.bind(this);
         this.restart = this.restart.bind(this);
         this.handleLevelChange = this.handleLevelChange.bind(this);
     }
 
-    generateCards() {
-        const cards = [];
+    shuffle(a) {
+        var j, x, i;
+        for (i = a.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = a[i];
+            a[i] = a[j];
+            a[j] = x;
+        }
+        return a;
+    };
 
-        this.props.colors.forEach((color, index) => {
+    generateCards(number) {
+        const cards = [];
+        const colorsArray = colors.slice(0, number);
+        const mixColors = this.shuffle(colorsArray.concat(colorsArray));
+
+        mixColors.forEach((color, index) => {
             cards.push({face: color, status: 'hidden', id: index});
         });
 
@@ -82,16 +99,18 @@ class Board extends Component {
     }
 
     restart() {
-        this.props.reStart();
+        const colorNumber = this.state.colorNumber;
         this.setState({
-            cards: this.generateCards(),
+            cards: this.generateCards(colorNumber),
             pairs: [],
             currentPair: []
         });
     }
 
-    handleLevelChange(e) {
-        this.props.changeLevel(e);
+    handleLevelChange(event) {
+        this.setState({
+            colorNumber: event.target.value
+        });
         setTimeout(() => this.restart(), 500);
     }
 
@@ -109,7 +128,7 @@ class Board extends Component {
 
                 <button onClick={this.restart}>Restart</button>
 
-                <select name="" id="" value={this.state.colorNumber} onChange={(e) => this.handleLevelChange(e)}>
+                <select name="" id="" value={this.state.colorNumber} onChange={this.handleLevelChange}>
                     <option value="6">Facile</option>
                     <option value="9">Moyen</option>
                     <option value="12">Difficile</option>

@@ -6,50 +6,15 @@ import Scores from './Scores'
 import ReactDOM from "react-dom";
 import registerServiceWorker from './registerServiceWorker';
 
-const colors = ["red", "blue", "orange", "green", "brown", "purple", "yellow", "blue-gray", "teal"];
-
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            colorsArray: this.getColorsArray(6),
             userScores: [],
             ranking: [],
-            colorNumber: 6
         };
 
         this.renderScores = this.renderScores.bind(this);
-        this.reStart = this.reStart.bind(this);
-        this.changeLevel = this.changeLevel.bind(this);
-    }
-
-    shuffle(a) {
-        var j, x, i;
-        for (i = a.length - 1; i > 0; i--) {
-            j = Math.floor(Math.random() * (i + 1));
-            x = a[i];
-            a[i] = a[j];
-            a[j] = x;
-        }
-        return a;
-    };
-
-    getColorsArray(number) {
-        const colorsArray = colors.slice(0, number);
-        return this.shuffle(colorsArray.concat(colorsArray));
-    }
-
-    reStart() {
-        const level = this.state.colorNumber;
-        this.setState({
-            colorsArray: this.getColorsArray(level)
-        });
-    }
-    
-    changeLevel(event) {
-        this.setState({
-            colorNumber: event.target.value,
-        });
     }
 
     renderScores() {
@@ -73,7 +38,7 @@ class App extends Component {
                 <Header renderScores={this.renderScores}/>
                 <div className="w3-main">
                     <Scores scores={scores}/>
-                    <Board colors={colorsArray} reStart={this.reStart} changeLevel={this.changeLevel}/>
+                    <Board reStart={this.reStart} changeLevel={this.changeLevel}/>
                 </div>
             </div>
         );

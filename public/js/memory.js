@@ -56402,8 +56402,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var colors = ["red", "blue", "orange", "green", "brown", "purple", "yellow", "blue-gray", "teal"];
-
 var App = function (_Component) {
     _inherits(App, _Component);
 
@@ -56413,52 +56411,15 @@ var App = function (_Component) {
         var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
         _this.state = {
-            colorsArray: _this.getColorsArray(6),
             userScores: [],
-            ranking: [],
-            colorNumber: 6
+            ranking: []
         };
 
         _this.renderScores = _this.renderScores.bind(_this);
-        _this.reStart = _this.reStart.bind(_this);
-        _this.changeLevel = _this.changeLevel.bind(_this);
         return _this;
     }
 
     _createClass(App, [{
-        key: 'shuffle',
-        value: function shuffle(a) {
-            var j, x, i;
-            for (i = a.length - 1; i > 0; i--) {
-                j = Math.floor(Math.random() * (i + 1));
-                x = a[i];
-                a[i] = a[j];
-                a[j] = x;
-            }
-            return a;
-        }
-    }, {
-        key: 'getColorsArray',
-        value: function getColorsArray(number) {
-            var colorsArray = colors.slice(0, number);
-            return this.shuffle(colorsArray.concat(colorsArray));
-        }
-    }, {
-        key: 'reStart',
-        value: function reStart() {
-            var level = this.state.colorNumber;
-            this.setState({
-                colorsArray: this.getColorsArray(level)
-            });
-        }
-    }, {
-        key: 'changeLevel',
-        value: function changeLevel(event) {
-            this.setState({
-                colorNumber: event.target.value
-            });
-        }
-    }, {
         key: 'renderScores',
         value: function renderScores() {
             var _this2 = this;
@@ -56485,7 +56446,7 @@ var App = function (_Component) {
                     'div',
                     { className: 'w3-main' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Scores__["a" /* default */], { scores: scores }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Board__["a" /* default */], { colors: colorsArray, reStart: this.reStart, changeLevel: this.changeLevel })
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Board__["a" /* default */], { reStart: this.reStart, changeLevel: this.changeLevel })
                 )
             );
         }
@@ -56705,6 +56666,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+var colors = ["red", "pink", "purple", "blue", "teal", "green", "light-green", "lime", "amber", "orange", "blue-gray", "brown", "pale-red", "deep-purple", "indigo"];
+
 var Board = function (_Component) {
     _inherits(Board, _Component);
 
@@ -56716,8 +56679,10 @@ var Board = function (_Component) {
         _this.state = {
             pairs: [],
             currentPair: [],
-            cards: _this.generateCards()
+            cards: _this.generateCards(6),
+            colorNumber: 6
         };
+
         _this.handleCardClick = _this.handleCardClick.bind(_this);
         _this.restart = _this.restart.bind(_this);
         _this.handleLevelChange = _this.handleLevelChange.bind(_this);
@@ -56725,18 +56690,32 @@ var Board = function (_Component) {
     }
 
     _createClass(Board, [{
-        key: 'generateCards',
-        value: function generateCards() {
+        key: "shuffle",
+        value: function shuffle(a) {
+            var j, x, i;
+            for (i = a.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }
+            return a;
+        }
+    }, {
+        key: "generateCards",
+        value: function generateCards(number) {
             var cards = [];
+            var colorsArray = colors.slice(0, number);
+            var mixColors = this.shuffle(colorsArray.concat(colorsArray));
 
-            this.props.colors.forEach(function (color, index) {
+            mixColors.forEach(function (color, index) {
                 cards.push({ face: color, status: 'hidden', id: index });
             });
 
             return cards;
         }
     }, {
-        key: 'getStatus',
+        key: "getStatus",
         value: function getStatus(index) {
             var _state = this.state,
                 currentPair = _state.currentPair,
@@ -56749,7 +56728,7 @@ var Board = function (_Component) {
             } else return "hidden";
         }
     }, {
-        key: 'handleCardClick',
+        key: "handleCardClick",
         value: function handleCardClick(index) {
             var _state2 = this.state,
                 currentPair = _state2.currentPair,
@@ -56772,7 +56751,7 @@ var Board = function (_Component) {
             }
         }
     }, {
-        key: 'handlePairAttempt',
+        key: "handlePairAttempt",
         value: function handlePairAttempt(index) {
             var _this2 = this;
 
@@ -56808,27 +56787,29 @@ var Board = function (_Component) {
             }, 1000);
         }
     }, {
-        key: 'restart',
+        key: "restart",
         value: function restart() {
-            this.props.reStart();
+            var colorNumber = this.state.colorNumber;
             this.setState({
-                cards: this.generateCards(),
+                cards: this.generateCards(colorNumber),
                 pairs: [],
                 currentPair: []
             });
         }
     }, {
-        key: 'handleLevelChange',
-        value: function handleLevelChange(e) {
+        key: "handleLevelChange",
+        value: function handleLevelChange(event) {
             var _this3 = this;
 
-            this.props.changeLevel(e);
+            this.setState({
+                colorNumber: event.target.value
+            });
             setTimeout(function () {
                 return _this3.restart();
             }, 500);
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             var _this4 = this;
 
@@ -56838,42 +56819,40 @@ var Board = function (_Component) {
             });
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
+                "div",
                 { className: "board" },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'cards w3-row' },
+                    "div",
+                    { className: "cards w3-row" },
                     cards
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'button',
+                    "button",
                     { onClick: this.restart },
-                    'Restart'
+                    "Restart"
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'select',
-                    { name: '', id: '', value: this.state.colorNumber, onChange: function onChange(e) {
-                            return _this4.handleLevelChange(e);
-                        } },
+                    "select",
+                    { name: "", id: "", value: this.state.colorNumber, onChange: this.handleLevelChange },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'option',
-                        { value: '6' },
-                        'Facile'
+                        "option",
+                        { value: "6" },
+                        "Facile"
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'option',
-                        { value: '9' },
-                        'Moyen'
+                        "option",
+                        { value: "9" },
+                        "Moyen"
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'option',
-                        { value: '12' },
-                        'Difficile'
+                        "option",
+                        { value: "12" },
+                        "Difficile"
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'option',
-                        { value: '15' },
-                        'Expert'
+                        "option",
+                        { value: "15" },
+                        "Expert"
                     )
                 )
             );
