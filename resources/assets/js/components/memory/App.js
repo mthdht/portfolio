@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header'
 import Board from './Board'
 import Scores from './Scores'
+import Ranking from './Ranking'
 import ReactDOM from "react-dom";
 import registerServiceWorker from './registerServiceWorker';
 
@@ -15,6 +16,7 @@ class App extends Component {
         };
 
         this.renderScores = this.renderScores.bind(this);
+        this.renderRanking = this.renderRanking.bind(this);
     }
 
     renderScores() {
@@ -30,14 +32,28 @@ class App extends Component {
             });
     }
 
+    renderRanking() {
+        axios.get('/memory/ranking')
+            .then((response) => {
+                this.setState({
+                    ranking: response.data
+                });
+                document.getElementById('ranking-modal').style.display = 'block';
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
     render() {
-        const colorsArray = this.state.colorsArray;
         const scores = this.state.userScores;
+        const ranking = this.state.ranking
         return (
             <div className="App">
-                <Header renderScores={this.renderScores}/>
+                <Header renderScores={this.renderScores} renderRanking={this.renderRanking}/>
                 <div className="w3-main">
                     <Scores scores={scores}/>
+                    <Ranking scores={ranking}/>
                     <Board/>
                 </div>
             </div>

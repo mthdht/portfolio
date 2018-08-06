@@ -31,7 +31,7 @@ class Header extends Component {
 
                         <div className="w3-right w3-padding-16 w3-hide-small">
                             <button className="w3-bar-item w3-large ct-dark-blue ct-hover-blue" onClick={this.props.renderScores}><b>Scores</b></button>
-                            <a href="" className="w3-bar-item w3-large ct-hover-blue"><b>Classement</b></a>
+                            <button className="w3-bar-item w3-large ct-dark-blue ct-hover-blue" onClick={this.props.renderRanking}><b>Classement</b></button>
                             <a href="" className="w3-bar-item w3-large ct-hover-blue"><b>Règles</b></a>
                         </div>
                     </div>

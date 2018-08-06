@@ -83,7 +83,7 @@ class Board extends Component {
                             guesses: this.state.guesses,
                             difficulty: colorNumber === 6 ? "facile" : colorNumber === 9 ? "moyen" : colorNumber === 12 ? "difficile" : "expert"
                         }).then(function (response) {
-                            console.log(response.data);
+                            return (response.data);
                         }).catch(function (error) {
                             console.log(error);
                         });
