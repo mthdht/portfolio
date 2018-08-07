@@ -117,8 +117,10 @@ class Board extends Component {
 
     render() {
         const cards = [];
+        const colorNumber = this.state.colorNumber;
+        const difficulty = colorNumber === 6 ? "easy" : colorNumber === 9 ? "medium" : colorNumber === 12 ? "hard" : "expert";
         this.state.cards.forEach((card) => {
-            cards.push(<Card face={card.face} status={this.getStatus(card.id)} index={card.id} key={card.id} handleCardClick={this.handleCardClick}/>);
+            cards.push(<Card face={card.face} status={this.getStatus(card.id)} index={card.id} key={card.id} handleCardClick={this.handleCardClick} difficulty={difficulty}/>);
         });
 
         return (

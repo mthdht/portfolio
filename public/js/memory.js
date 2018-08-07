@@ -56520,7 +56520,7 @@ exports = module.exports = __webpack_require__(60)(false);
 
 
 // module
-exports.push([module.i, ".card {\n    height: 150px;\n    display: flex;\n    align-items: center;\n}\n\ndiv.card[class*=\"w3-\"] img {\n    display: none;\n}\ndiv.card[class*=\"w3-gray\"] img {\n    display: block;\n}\n\n.sidebar {\n    display:none;\n    z-index: 10;\n}\n\n.pointer {\n    cursor:pointer;\n}\n\n.controls {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.card-container {\n    padding: 5px;\n}\n\n@media (min-width: 768px) {\n    .card {\n        height: 200px;\n    }\n\n    .card-container {\n        padding: 10px;\n    }\n}\n\n@media (min-width: 992px) {\n    .card {\n        height: 250px;\n    }\n\n    .card-container {\n        padding: 15px;\n    }\n}", ""]);
+exports.push([module.i, ".cards {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.card {\n    min-height: 50px;\n    display: flex;\n    align-items: center;\n}\n\n.card-container {\n    padding: 5px;\n}\n\n.easy {\n    width: calc(100% / 6);\n}\n\n.easy .card {\n    min-height: 200px;\n}\n\n.medium {\n    width: calc(100% / 6);\n}\n\n.medium .card {\n    min-height: 150px;\n}\n\n.hard {\n    width: calc(100% / 6);\n}\n\n.hard .card {\n    min-height: 100px;\n}\n\n.expert {\n    width: calc(100% / 6);\n}\n\n.expert .card {\n    min-height: 80px;\n}\n\ndiv.card[class*=\"w3-\"] img {\n    display: none;\n}\ndiv.card[class*=\"w3-gray\"] img {\n    display: block;\n}\n\n.sidebar {\n    display:none;\n    z-index: 10;\n}\n\n.pointer {\n    cursor:pointer;\n}\n\n.controls {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n@media (min-width: 768px) {\n    .card-container {\n        padding: 10px;\n    }\n\n    .easy {\n        width: calc(100% / 6);\n    }\n\n    .easy .card {\n        min-height: 300px;\n    }\n\n    .medium {\n        width: calc(100% / 6);\n    }\n\n    .medium .card {\n        min-height: 250px;\n    }\n\n    .hard {\n        width: calc(100% / 8);\n    }\n\n    .hard .card {\n        min-height: 250px;\n    }\n\n    .expert {\n        width: calc(100% / 10);\n    }\n\n    .expert .card {\n        min-height: 250px;\n    }\n}\n\n@media (min-width: 992px) {\n    .card-container {\n        padding: 15px;\n    }\n\n    .easy .card {\n        min-height: 250px;\n    }\n\n    .medium .card, .hard .card, .expert .card {\n        min-height: 200px;\n    }\n\n}", ""]);
 
 // exports
 
@@ -56834,8 +56834,10 @@ var Board = function (_Component) {
             var _this4 = this;
 
             var cards = [];
+            var colorNumber = this.state.colorNumber;
+            var difficulty = colorNumber === 6 ? "easy" : colorNumber === 9 ? "medium" : colorNumber === 12 ? "hard" : "expert";
             this.state.cards.forEach(function (card) {
-                cards.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Card__["a" /* default */], { face: card.face, status: _this4.getStatus(card.id), index: card.id, key: card.id, handleCardClick: _this4.handleCardClick }));
+                cards.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Card__["a" /* default */], { face: card.face, status: _this4.getStatus(card.id), index: card.id, key: card.id, handleCardClick: _this4.handleCardClick, difficulty: difficulty }));
             });
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -56951,7 +56953,7 @@ var Card = function (_Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
-                { className: "card-container w3-col s2", onClick: function onClick() {
+                { className: "card-container " + this.props.difficulty, onClick: function onClick() {
                         return _this2.handleClick(_this2.props.index);
                     } },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
