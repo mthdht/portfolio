@@ -56796,6 +56796,8 @@ var Board = function (_Component) {
                             }).catch(function (error) {
                                 console.log(error);
                             });
+
+                            alert("Vous avez gagné en " + _this2.state.guesses + " essais, votre score est de " + scoreFinal);
                         }
                     }, 1000);
                 }

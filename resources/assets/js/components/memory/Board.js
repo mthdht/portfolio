@@ -89,6 +89,8 @@ class Board extends Component {
                         }).catch(function (error) {
                             console.log(error);
                         });
+
+                        alert("Vous avez gagné en " + this.state.guesses + " essais, votre score est de " + scoreFinal);
                     }
                 }, 1000);
             }
